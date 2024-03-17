@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:untitled5/sign_in.dart';
+import 'package:untitled5/sign%20in/sign_in.dart';
 
 class landing3 extends StatelessWidget {
+  const landing3({super.key});
+
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -28,7 +30,11 @@ class landing3 extends StatelessWidget {
           ),
           const Text(
             " KEY TO ALL SUCCESS",
-            style: TextStyle(color: Colors.white, fontSize: 20,fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+                fontWeight: FontWeight.bold
+            ),
           ),
           const SizedBox(
             height: 53,
@@ -47,10 +53,10 @@ class landing3 extends StatelessWidget {
             MaterialPageRoute(builder: (context)=>const SignIn())
             );
           },
-              child:Container(
+              child:const SizedBox(
                 width: 150,
                 height: 50,
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(

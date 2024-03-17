@@ -3,7 +3,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'day_time.dart';
+import '../../days/day_time.dart';
 import 'goal.dart';
 class Levels extends StatefulWidget {
   const Levels({super.key});
@@ -100,7 +100,7 @@ class _GoalsState extends State<Levels> {
                 Navigator.pop(context,
                 MaterialPageRoute(builder: (context)=>const Goals()));
               }, icon:const Icon(Icons.arrow_back), ),
-              SizedBox(
+              const SizedBox(
                 width: 180,
               ),
               FloatingActionButton.extended(

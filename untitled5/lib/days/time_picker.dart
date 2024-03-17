@@ -2,6 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TimePickerDialog extends StatefulWidget {
+  const TimePickerDialog({super.key});
+
   @override
   _TimePickerDialogState createState() => _TimePickerDialogState();
 }
@@ -14,10 +16,10 @@ class _TimePickerDialogState extends State<TimePickerDialog> {
     return Container(
       width: 350,
       height: 343,
-      color: Color(0xFF790023),
+      color: const Color(0xFF790023),
       child: Column(
         children: [
-          Container(
+          SizedBox(
             height: 300,
             child: CupertinoDatePicker(
               mode: CupertinoDatePickerMode.time,
@@ -31,7 +33,7 @@ class _TimePickerDialogState extends State<TimePickerDialog> {
           ),
           CupertinoButton(
             color: Colors.white,
-            child: Text('Done'),
+            child: const Text('Done'),
             onPressed: () {
               Navigator.of(context).pop(selectedTime.format(context));
             },

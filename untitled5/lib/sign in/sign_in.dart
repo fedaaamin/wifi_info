@@ -1,8 +1,9 @@
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-
+import 'package:google_sign_in/google_sign_in.dart';
 import 'User_name.dart';
+import 'sign_in_google.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -12,6 +13,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +95,9 @@ class _SignInState extends State<SignIn> {
                         padding: const EdgeInsets.all(20),
                         child: TextButton(
                           onPressed: (){
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => const UserName()),
-                            );
+                            //
+                            signInWithGoogle();
+
                           },
                             child:Container(
                               decoration: BoxDecoration(

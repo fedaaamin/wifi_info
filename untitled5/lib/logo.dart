@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 import 'OnBoarding/onboarding.dart';
-import 'sign_in.dart';
+
 
 class Logo extends StatefulWidget {
   const Logo({super.key});
@@ -16,9 +16,9 @@ class _LogoState extends State<Logo> {
   void initState() {
     super.initState();
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final response = await Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(seconds: 2));
       Navigator.pushReplacement( context,
-          MaterialPageRoute(builder: (_) =>  PageSliderDemo()));
+          MaterialPageRoute(builder: (_) =>   PageSliderDemo()));
     });
 
   }

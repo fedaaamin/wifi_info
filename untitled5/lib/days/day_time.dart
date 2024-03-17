@@ -1,8 +1,5 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled5/days/day%20widget.dart';
-import 'age.dart';
 class Days extends StatefulWidget {
   const Days({super.key});
 
@@ -134,7 +131,7 @@ class _DaysState extends State<Days> {
           ElevatedButton(
             style:ElevatedButton.styleFrom(
               backgroundColor: click2? const Color(0xff3B3B3B):const Color(0xFF790023),
-              padding: EdgeInsets.only(left: 80,
+              padding: const EdgeInsets.only(left: 80,
               right: 80)
             ),
             

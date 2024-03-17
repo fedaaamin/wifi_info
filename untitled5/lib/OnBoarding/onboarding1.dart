@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class landing extends StatelessWidget {
+  const landing({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
