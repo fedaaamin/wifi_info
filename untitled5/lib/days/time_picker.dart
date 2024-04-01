@@ -13,32 +13,34 @@ class _TimePickerDialogState extends State<TimePickerDialog> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 350,
-      height: 343,
-      color: const Color(0xFF790023),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 300,
-            child: CupertinoDatePicker(
-              mode: CupertinoDatePickerMode.time,
-              initialDateTime: DateTime.now(),
-              onDateTimeChanged: (DateTime newDateTime) {
-                setState(() {
-                  selectedTime = TimeOfDay.fromDateTime(newDateTime);
-                });
+    return SingleChildScrollView(
+      child: Container(
+        width: 350,
+        height: 343,
+        color: const Color(0xFF790023),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 300,
+              child: CupertinoDatePicker(
+                mode: CupertinoDatePickerMode.time,
+                initialDateTime: DateTime.now(),
+                onDateTimeChanged: (DateTime newDateTime) {
+                  setState(() {
+                    selectedTime = TimeOfDay.fromDateTime(newDateTime);
+                  });
+                },
+              ),
+            ),
+            CupertinoButton(
+              color: Colors.white,
+              child: const Text('Done'),
+              onPressed: () {
+                Navigator.of(context).pop(selectedTime.format(context));
               },
             ),
-          ),
-          CupertinoButton(
-            color: Colors.white,
-            child: const Text('Done'),
-            onPressed: () {
-              Navigator.of(context).pop(selectedTime.format(context));
-            },
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

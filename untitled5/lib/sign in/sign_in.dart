@@ -1,8 +1,5 @@
-
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-import 'User_name.dart';
+import 'package:untitled5/sign%20in/Sign_in_facebook.dart';
 import 'sign_in_google.dart';
 
 class SignIn extends StatefulWidget {
@@ -11,15 +8,11 @@ class SignIn extends StatefulWidget {
   @override
   State<SignIn> createState() => _SignInState();
 }
-
 class _SignInState extends State<SignIn> {
-
-
-
-
-  @override
+ @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      resizeToAvoidBottomInset: false,
       body:
       Container(
         decoration: const BoxDecoration(
@@ -42,16 +35,15 @@ class _SignInState extends State<SignIn> {
                 ),
                 color: Color(0xFF790023),
               ),
-              child: Column(
-                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+              child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children:[
 
-                    const Padding(
+                    Padding(
 
                       padding: EdgeInsets.only(
-                          top: 40,
-                          bottom: 30
+                          top: 61,
+
                       ),
                       child: Text(
                         'SIGN IN',
@@ -61,75 +53,14 @@ class _SignInState extends State<SignIn> {
                             fontSize: 30),
                       ),
                     ),
-                      Padding(
-                        padding: const EdgeInsets.all(30),
-                        child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20)
-                                ,color: const Color(0xff0866FF),
-                            ),
-                            width: 300,
-                            height: 50,
-                            child: TextButton.icon(
-                              onPressed: (){
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => const UserName()),
-                                );
-
-                              },
-                              icon: const Icon(Icons.facebook,
-                                color: Colors.white,),
-                              label:
-                              const Text(
-                                'Continue with Facebook',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20
-                                ),
-                              ),
-                            )
-                        ),
+                    SizedBox(
+                       height: 56,
+                     ),
+                    SignInFacebook(),
+                     SizedBox(
+                        height: 44,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(20),
-                        child: TextButton(
-                          onPressed: (){
-                            //
-                            signInWithGoogle();
-
-                          },
-                            child:Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20)
-                                ,color: Colors.white,
-                              ),
-                              width: 300,
-                              height: 50,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                mainAxisSize: MainAxisSize.min,
-                                children: <Widget>[
-                                  Image.asset(
-                                    'images/google.png',
-                                    fit:BoxFit.cover,
-                                    width: 20,
-                                    height: 20,
-                                  ),
-                                  const SizedBox(
-                                    width: 5.0,
-                                  ),
-                                  const Text(
-                                    'Sign-in with Google',
-                                    style: TextStyle(
-                                      fontSize: 20
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                        ),
-                      ),
+                       SignInGoogle(),
 
 
                     ]

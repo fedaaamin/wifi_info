@@ -12,8 +12,7 @@ void main() async  {
         storageBucket: "fitness-4a734.appspot.com",
       ));
 
-  print('bdddddbb');
-  runApp(const MyApp());
+    runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
