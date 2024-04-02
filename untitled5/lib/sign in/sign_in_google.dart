@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_button/sign_button.dart';
 import 'package:untitled5/User_information/gender.dart';
+import 'package:untitled5/api/api_post.dart';
 class SignInGoogle extends StatefulWidget {
   const SignInGoogle({super.key});
 
@@ -34,11 +35,8 @@ class _SignInGoogleState extends State<SignInGoogle> {
 
       // Once signed in, return the UserCredential
      await FirebaseAuth.instance.signInWithCredential(credential);
-      Map<String, dynamic> userData = {
-        'firstName': name,
-        'gmail': email,
-      };
-      await sendUserDataToApi(userData);
+
+     await ApiPost(name!, email);
       Navigator.push(
           context,
           MaterialPageRoute(
@@ -47,24 +45,8 @@ class _SignInGoogleState extends State<SignInGoogle> {
       );
     }
   }
- Future<void> sendUserDataToApi(userData) async {
-    try {
-      Dio dio = Dio();
-      Response response = await dio.post(
-        url,
-        data: userData,
-         options:  Options (
-             validateStatus: (_) => true,
-           contentType: Headers.jsonContentType,
-           responseType:ResponseType.json,
-         )
-      );
-      print(response.data);
-      print('qqqqqczaefrew2wewe');
-    } on DioException catch (error) {
-      print('Error sending user data: $error');
-    }
-  }
+
+
   @override
   Widget build(BuildContext context) {
     return SignInButton(
