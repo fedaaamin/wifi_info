@@ -39,7 +39,7 @@ class _SignInGoogleState extends State<SignInGoogle> {
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
       final dioHelper = DioHelper();
-      await dioHelper.postDate(url: '/Api/Trainees', data: {
+      await dioHelper.postDate(url: url, data: {
         "Name": name,
         "Email": email,
       });

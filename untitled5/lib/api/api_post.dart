@@ -12,22 +12,23 @@ class ApiPost {
     try {
       Response response = await dio.post(url,
           data: {
-            "traineeId": 1,
-            "firstName": firstName,
-            "lastName": "user2",
-            "gmail": gmail,
-            "password": "pass",
-            "gender": "Male",
-            "purpose": "Lose Weight",
-            "hasTools": true,
-            "dateOfBirth": "2002-01-31T23:47:09.002",
-            "height": 185,
-            "weight": 70,
-            "fitnessLevel": "Low",
-            "requiredCalories": 2500,
-            "availabaleDays": ["Friday", "Saturday"],
-            "traineeSports": ["Football"],
-            "traineeFoods": ["Liver"]
+           "trainee": {
+             "firstName": firstName,
+             "lastName": "user2",
+             "gmail": gmail,
+             "password": "pass",
+             "gender": "Male",
+             "purpose": "Lose Weight",
+             "hasTools": true,
+             "dateOfBirth": "2002-01-31T23:47:09.002",
+             "height": 185,
+             "weight": 70,
+             "fitnessLevel": "Low",
+             "requiredCalories": 2500,
+             "availabaleDays": ["Friday", "Saturday"],
+             "traineeSports": ["Football"],
+             "traineeFoods": ["Liver"]
+           }
           },
           options: Options(
             validateStatus: (_) => true,
