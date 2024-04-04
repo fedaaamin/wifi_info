@@ -4,7 +4,6 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_button/sign_button.dart';
 import 'package:untitled5/User_information/gender.dart';
 import 'package:untitled5/api/api_post.dart';
-
 class SignInGoogle extends StatefulWidget {
   const SignInGoogle({super.key});
 
@@ -13,9 +12,8 @@ class SignInGoogle extends StatefulWidget {
 }
 
 class _SignInGoogleState extends State<SignInGoogle> {
-  final String url =
+   String url =
       "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
-   String? firstName;
 
 
   Future signInWithGoogle() async {
@@ -39,7 +37,7 @@ class _SignInGoogleState extends State<SignInGoogle> {
 
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
-      firstName=name!;
+     
       final dioHelper = DioHelper();
       await dioHelper.postDate(
           url: url,

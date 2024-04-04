@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/buttons/next_button.dart';
 
 import 'height.dart';
@@ -14,6 +15,8 @@ class Weight extends StatefulWidget {
 
 class _WeightState extends State<Weight> {
   double selectedWeight = 50.0;
+  String url =
+      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -68,10 +71,16 @@ class _WeightState extends State<Weight> {
                       ),
                       child:CupertinoPicker(
                         itemExtent: 40,
-                        onSelectedItemChanged: (index) {
+                        onSelectedItemChanged: (index)async {
                           setState(() {
                             selectedWeight = 30.0 + index.toDouble();
 
+                          });
+                          final dioHelper = DioHelper();
+                          await dioHelper.postDate(url: url, data: {
+                            "trainee":{
+                              "weight":selectedWeight
+                            }
                           });
                         },
                         scrollController: FixedExtentScrollController(initialItem: selectedWeight.toInt()),

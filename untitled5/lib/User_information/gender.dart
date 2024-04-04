@@ -76,6 +76,7 @@ class _GenderState extends State<Gender> {
                         text="female";
                       }
                     });
+
                       final dioHelper = DioHelper();
                       await dioHelper.postDate(url: url, data: {
                         "trainee":{

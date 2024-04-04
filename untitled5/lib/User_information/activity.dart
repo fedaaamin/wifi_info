@@ -2,6 +2,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/buttons/next_button.dart';
 import 'days/day_time.dart';
 import 'goal.dart';
@@ -14,6 +15,8 @@ class Levels extends StatefulWidget {
 
 class _GoalsState extends State<Levels> {
   int index = 0;
+  final String url =
+      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
 
   @override
   Widget build(BuildContext context) {
@@ -60,9 +63,15 @@ class _GoalsState extends State<Levels> {
 
 
                     itemExtent: 30,
-                    onSelectedItemChanged: (int i) {
+                    onSelectedItemChanged: (int i) async {
                       setState(() {
                         index = i;
+                      });
+                      final dioHelper = DioHelper();
+                      await dioHelper.postDate(url: url, data: {
+                        "trainee":{
+                          "dateOfBirth":index
+                        }
                       });
                     },
                     children: <Widget>[
