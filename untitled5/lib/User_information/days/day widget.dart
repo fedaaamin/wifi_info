@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'day.dart';
 
 class DayWidget extends StatelessWidget {

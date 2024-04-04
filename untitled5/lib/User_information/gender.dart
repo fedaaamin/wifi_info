@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
-
+import 'package:untitled5/api/api_post.dart';
+import 'package:untitled5/buttons/next_button.dart';
 import 'age.dart';
-
 class Gender extends StatefulWidget {
   const Gender({super.key});
 
@@ -13,8 +12,9 @@ class Gender extends StatefulWidget {
 class _GenderState extends State<Gender> {
   bool female=false;
   bool gender= true;
-
-
+  String? text;
+  final String url =
+      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -22,7 +22,7 @@ class _GenderState extends State<Gender> {
         backgroundColor:Colors.black,
         body: Center(
           child: Column(
-            children: [
+            children: <Widget>[
               const SizedBox(
                 height: 100,
               ),
@@ -69,10 +69,19 @@ class _GenderState extends State<Gender> {
                   height: 150,
 
                   child: IconButton(
-                    onPressed: (){
+                    onPressed: () async{
                       setState(() {
-                     female=gender;
+                    if(female=gender)
+                      {
+                        text="female";
+                      }
                     });
+                      final dioHelper = DioHelper();
+                      await dioHelper.postDate(url: url, data: {
+                        "trainee":{
+                          "gender":text
+                        }
+                      });
                       },
                     icon:const Icon(Icons.female,
                     size: 100,color: Colors.white,),
@@ -92,11 +101,16 @@ class _GenderState extends State<Gender> {
                     height: 150,
 
                     child: IconButton(
-                      onPressed: (){
+                      onPressed: () async{
                         setState(() {
                           female=!gender;
                         });
-
+                        final dioHelper = DioHelper();
+                        await dioHelper.postDate(url: url, data: {
+                          "trainee":{
+                            "gender":"male"
+                          }
+                        });
                       },
                       icon: const Icon(Icons.male,
                         size: 100,
@@ -104,32 +118,22 @@ class _GenderState extends State<Gender> {
                       ),
                     ),
                   )
-              )
+              ),
+
             ],
           ),
         ),
         floatingActionButton: Padding(
           padding: const EdgeInsets.only(
-            right: 10,
-            bottom: 30
+              right: 10,
+              bottom: 30
           ),
-          child: FloatingActionButton.extended(
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>  const Age()),
-              );
-            },
-            backgroundColor: Colors.white,
-            label: const Text("Next   >",
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color:Color(0xFF790023)
-              ),
-            ),
+          child: NextButton(
+              page: Age()
           ),
+
         ),
+
       ),
     );
   }

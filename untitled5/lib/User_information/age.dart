@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled5/buttons/next_button.dart';
 
 import 'weight.dart';
 
@@ -92,28 +93,16 @@ class _AgeState extends State<Age> {
             ],
           ),
         ),
-        floatingActionButton: Padding(
+        floatingActionButton:Padding(
+
           padding: const EdgeInsets.only(
               right: 10,
               bottom: 30
           ),
-          child: FloatingActionButton.extended(
-            onPressed: (){
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) =>  const Weight()),
-              );
-            },
-            backgroundColor: Colors.white,
-            label: const Text("Next   >",
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color:Color(0xFF790023)
-              ),
-            ),
+          child: NextButton(
+              page: Weight()
           ),
-        ),
+        )
       ),
     );
   }

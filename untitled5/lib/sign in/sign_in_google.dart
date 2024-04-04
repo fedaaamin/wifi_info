@@ -1,4 +1,3 @@
-import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -16,6 +15,8 @@ class SignInGoogle extends StatefulWidget {
 class _SignInGoogleState extends State<SignInGoogle> {
   final String url =
       "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
+   String? firstName;
+
 
   Future signInWithGoogle() async {
     // Trigger the authentication flow
@@ -38,10 +39,16 @@ class _SignInGoogleState extends State<SignInGoogle> {
 
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
+      firstName=name!;
       final dioHelper = DioHelper();
-      await dioHelper.postDate(url: url, data: {
-        "Name": name,
-        "Email": email,
+      await dioHelper.postDate(
+          url: url,
+          data: {
+        "trainee":
+        {
+          "firstName": name,
+          "gmail": email
+        }
       });
       // await ApiPost(name!, email);
       Navigator.push(

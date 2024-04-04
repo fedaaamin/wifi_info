@@ -2,8 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-import '../../days/day_time.dart';
+import 'package:untitled5/buttons/next_button.dart';
+import 'days/day_time.dart';
 import 'goal.dart';
 class Levels extends StatefulWidget {
   const Levels({super.key});
@@ -103,21 +103,9 @@ class _GoalsState extends State<Levels> {
               const SizedBox(
                 width: 180,
               ),
-              FloatingActionButton.extended(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Days()),
-                  );
-                },
-                backgroundColor: Colors.white,
-                label: const Text("Next   >",
-                  style: TextStyle(
-                    fontSize: 20,
-                      color: Color(0xFF790023),
-                      fontWeight: FontWeight.bold),
-                ),
-              ),
+              NextButton(
+                  page: Days()
+              )
             ],
           ),
         ),

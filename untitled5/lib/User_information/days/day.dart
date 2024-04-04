@@ -9,18 +9,17 @@ final  String day;
 }
 
 class _DayState extends State<Day> {
-  bool click=true;
+  bool click=false;
+  bool unClick= true;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style:ElevatedButton.styleFrom(
         backgroundColor: click?const Color(0xff3B3B3B):const Color(0xFF790023),
-        
-
       )
         ,onPressed: (){
         setState(() {
-          click=false;
+          click=unClick;
         });
     },
         child: Text(

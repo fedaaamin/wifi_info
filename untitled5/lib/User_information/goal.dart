@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled5/buttons/next_button.dart';
 
 import 'activity.dart';
 
@@ -94,24 +95,14 @@ class _GoalsState extends State<Goals> {
           ),
         ),
         floatingActionButton: Padding(
-          padding: const EdgeInsets.only(right: 10, bottom: 30),
-          child: FloatingActionButton.extended(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const Levels()),
-              );
-            },
-            backgroundColor:Colors.white,
-            label: const Text(
-              "Next   >",
-              style:
-              TextStyle(   fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color:Color(0xFF790023)),
-            ),
+          padding: const EdgeInsets.only(
+              right: 10,
+              bottom: 30
           ),
-        ),
+          child: NextButton(
+              page: Levels()
+          ),
+        )
       ),
     );
   }
