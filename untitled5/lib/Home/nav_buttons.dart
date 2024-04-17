@@ -34,7 +34,8 @@ class _NavButtonsState extends State<NavButtons> {
             ),
           ),
           PersistentTabConfig(
-            screen: NotificationsHome(),
+            screen: NotificationsHome(
+            ),
             item: ItemConfig(
               icon: Icon(Iconsax.notification),
               activeForegroundColor: Colors.white,
