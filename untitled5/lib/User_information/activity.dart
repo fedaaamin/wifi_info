@@ -1,11 +1,11 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/buttons/next_button.dart';
+
 import 'days/day_time.dart';
 import 'goal.dart';
+
 class Levels extends StatefulWidget {
   const Levels({super.key});
 
@@ -31,7 +31,7 @@ class _GoalsState extends State<Levels> {
               ),
               const Text(
                 "Your regular physical "
-                    "activity level?",
+                "activity level?",
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -50,18 +50,16 @@ class _GoalsState extends State<Levels> {
               const SizedBox(
                 height: 40,
               ),
-
               Container(
                 color: Colors.black,
                 width: 400,
                 height: 400,
                 child: CupertinoPicker(
-                    scrollController: FixedExtentScrollController(initialItem: index),
+                    scrollController:
+                        FixedExtentScrollController(initialItem: index),
                     diameterRatio: 1,
                     useMagnifier: true,
                     magnification: 1.3,
-
-
                     itemExtent: 30,
                     onSelectedItemChanged: (int i) async {
                       setState(() {
@@ -69,31 +67,29 @@ class _GoalsState extends State<Levels> {
                       });
                       final dioHelper = DioHelper();
                       await dioHelper.postDate(url: url, data: {
-                        "trainee":{
-                          "dateOfBirth":index
-                        }
+                        "trainee": {"dateOfBirth": index}
                       });
                     },
                     children: <Widget>[
                       Text(
                         'Rookie',
                         style: TextStyle(
-                            color: index == 0 ?  Colors.white:Colors.grey ),
+                            color: index == 0 ? Colors.white : Colors.grey),
                       ),
                       Text(
                         'Beginner',
                         style: TextStyle(
-                            color: index == 1 ?   Colors.white:Colors.grey  ),
+                            color: index == 1 ? Colors.white : Colors.grey),
                       ),
                       Text('Intermediate',
                           style: TextStyle(
-                              color: index == 2 ? Colors.white:Colors.grey )),
+                              color: index == 2 ? Colors.white : Colors.grey)),
                       Text('Advance',
                           style: TextStyle(
-                              color: index == 3 ? Colors.white:Colors.grey )),
+                              color: index == 3 ? Colors.white : Colors.grey)),
                       Text('True Beast',
                           style: TextStyle(
-                              color: index == 4 ? Colors.white:Colors.grey ))
+                              color: index == 4 ? Colors.white : Colors.grey))
                     ]),
               )
             ],
@@ -104,21 +100,20 @@ class _GoalsState extends State<Levels> {
           child: Row(
             children: [
               IconButton(
-                color: Colors.white
-                ,onPressed: (){
-                Navigator.pop(context,
-                MaterialPageRoute(builder: (context)=>const Goals()));
-              }, icon:const Icon(Icons.arrow_back), ),
+                color: Colors.white,
+                onPressed: () {
+                  Navigator.pop(context,
+                      MaterialPageRoute(builder: (context) => const Goals()));
+                },
+                icon: const Icon(Icons.arrow_back),
+              ),
               const SizedBox(
                 width: 180,
               ),
-              NextButton(
-                  page: Days()
-              )
+              NextButton(page: Days())
             ],
           ),
         ),
-        
       ),
     );
   }
