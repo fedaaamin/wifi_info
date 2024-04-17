@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:untitled5/User_information/disease/button.dart';
 import 'package:untitled5/buttons/next_button.dart';
+import 'package:untitled5/home.dart';
+import 'package:untitled5/logo.dart';
 
-import '../age.dart';
 
 class Disease extends StatefulWidget {
   const Disease({super.key});
@@ -24,7 +25,7 @@ class _DiseaseState extends State<Disease> {
           TextButton(onPressed: (){
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) =>  const Age()),
+              MaterialPageRoute(builder: (context) =>  const Logo()),
             );
           },
             child: Text("SKIP >",
@@ -136,7 +137,7 @@ class _DiseaseState extends State<Disease> {
        bottom: 30
          ),
         child: NextButton(
-            page: Age()
+            page: Home()
         ),
 
       ),
