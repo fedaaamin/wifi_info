@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled5/Home/nav_buttons.dart';
 import 'package:untitled5/User_information/disease/button.dart';
 import 'package:untitled5/buttons/next_button.dart';
 
@@ -136,7 +137,7 @@ class _DiseaseState extends State<Disease> {
        bottom: 30
          ),
         child: NextButton(
-            page: Age()
+            page: NavButtons()
         ),
 
       ),

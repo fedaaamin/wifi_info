@@ -1,7 +1,21 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled5/api/api_post.dart';
+import 'package:untitled5/notifications/notifications.dart';
+import 'package:untitled5/notifications/notifications_firebase.dart';
+
 import 'logo.dart';
+
+final navigatorKey = GlobalKey<NavigatorState>();
+Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  // If you're going to use other Firebase services in the background, such as Firestore,
+  // make sure you call `initializeApp` before using other Firebase services.
+  await Firebase.initializeApp();
+
+  print("Handling a background message: ${message.messageId}");
+}
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,6 +28,8 @@ void main() async {
     storageBucket: "fitness-4a734.appspot.com",
   ));
   DioHelper.init();
+  NotificationsFirebase().intiNotifications();
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(const MyApp());
 }
 
@@ -26,7 +42,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home: const Logo(),
+      home: Logo(),
+      navigatorKey: navigatorKey,
+      routes: {
+        "/notificationsHome":(context) =>NotificationsHome()
+      },
     );
   }
 }
