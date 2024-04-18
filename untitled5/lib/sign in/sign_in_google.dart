@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_button/sign_button.dart';
+import 'package:untitled5/Home/nav_buttons.dart';
 import 'package:untitled5/User_information/gender.dart';
 import 'package:untitled5/api/api_post.dart';
 class SignInGoogle extends StatefulWidget {
@@ -14,6 +15,7 @@ class SignInGoogle extends StatefulWidget {
 class _SignInGoogleState extends State<SignInGoogle> {
    String url =
       "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
+    int? index;
 
 
   Future signInWithGoogle() async {
@@ -37,21 +39,27 @@ class _SignInGoogleState extends State<SignInGoogle> {
 
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
+      if(index==0){
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const NavButtons()));
+      }else if(index==1){
+        final dioHelper = DioHelper();
+        await dioHelper.postDate(
+            url: url,
+            data: {
+              "trainee":
+              {
+                "firstName": name,
+                "gmail": email
+              }
+            });
+        // await ApiPost(name!, email);
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const Gender()));
+      }
+      }
      
-      final dioHelper = DioHelper();
-      await dioHelper.postDate(
-          url: url,
-          data: {
-        "trainee":
-        {
-          "firstName": name,
-          "gmail": email
-        }
-      });
-      // await ApiPost(name!, email);
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const Gender()));
-    }
+
   }
 
   @override

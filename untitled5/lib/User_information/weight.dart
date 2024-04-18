@@ -77,7 +77,7 @@ class _WeightState extends State<Weight> {
 
                           });
                           final dioHelper = DioHelper();
-                          await dioHelper.postDate(url: url, data: {
+                          await dioHelper.update(url: url, data: {
                             "trainee":{
                               "weight":selectedWeight
                             }

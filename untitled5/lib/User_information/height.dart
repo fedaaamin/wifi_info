@@ -72,7 +72,7 @@ class _HeightState extends State<Height> {
                             selectedHeight = index + 120;
                           });
                           final dioHelper = DioHelper();
-                          await dioHelper.postDate(url: url, data: {
+                          await dioHelper.update(url: url, data: {
                             "trainee": {"dateOfBirth": selectedHeight}
                           });
                         },
