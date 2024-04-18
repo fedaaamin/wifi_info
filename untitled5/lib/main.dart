@@ -1,30 +1,29 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled5/Home/nav_buttons.dart';
 import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/notifications/notifications.dart';
 import 'package:untitled5/notifications/notifications_firebase.dart';
 
-import 'logo.dart';
-
 final navigatorKey = GlobalKey<NavigatorState>();
-String? title ;
+String? title;
+
 String? body;
+
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // If you're going to use other Firebase services in the background, such as Firestore,
   // make sure you call `initializeApp` before using other Firebase services.
   print("=========================================");
   title = message.notification!.title;
- print(title);
- body=message.notification!.body;
- print(body);
+  print(title);
+  body = message.notification!.body;
+  print(body);
   navigatorKey.currentState
       ?.pushNamed("/notificationsHome", arguments: message);
 
-
   // print("Handling a background message: ${message.messageId}");
 }
-
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,10 +50,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home: Logo(),
+      home: NavButtons(),
+      // Logo(),
       navigatorKey: navigatorKey,
       routes: {
-        "/notificationsHome":(context) =>NotificationsHome( Title: title, body: body,)
+        "/notificationsHome": (context) => NotificationsHome(
+            // Title: title, body: body,
+            )
       },
     );
   }

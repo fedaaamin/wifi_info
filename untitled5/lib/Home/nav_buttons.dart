@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
+import 'package:untitled5/Home/Activity/steps.dart';
 import 'package:untitled5/Home/home_page.dart';
 import 'package:untitled5/notifications/notifications.dart';
 
@@ -27,7 +28,7 @@ class _NavButtonsState extends State<NavButtons> {
             ),
           ),
           PersistentTabConfig(
-            screen: Container(),
+            screen: Steps(),
             item: ItemConfig(
               icon: Icon(Iconsax.activity),
               activeForegroundColor: Colors.white,
