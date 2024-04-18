@@ -64,7 +64,7 @@ class _GoalsState extends State<Goals> {
                           index = i;
                         });
                         final dioHelper = DioHelper();
-                        await dioHelper.postDate(url: url, data: {
+                        await dioHelper.update(url: url, data: {
                           "trainee": {"purpose": index}
                         });
                       },
