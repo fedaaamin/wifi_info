@@ -7,8 +7,10 @@ class NotificationsFirebase {
   Future<void> intiNotifications() async {
     await _firebaseMessaging.requestPermission();
     String? token = await _firebaseMessaging.getToken();
+    print("===========================");
     print("token: $token");
     intiPushNotifications();
+    print("=============================");
   }
 
   void handleMessage(RemoteMessage? message) {

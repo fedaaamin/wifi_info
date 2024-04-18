@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled5/Home/nav_buttons.dart';
 import 'package:untitled5/User_information/disease/button.dart';
 import 'package:untitled5/buttons/next_button.dart';
+import 'package:untitled5/food/food.dart';
 
 import '../age.dart';
 
@@ -39,95 +40,99 @@ class _DiseaseState extends State<Disease> {
         ],
       ),
       body: Center(
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 100,
-            ),
-            const Text("DO YOU SUFFER FROM",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 20,
               ),
-            ),
-            const SizedBox(
-              height: 3,
-            ),
-            const Text("ANY DISEASE?, CHOOSE IT"
-
-              ,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20
-              ),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const Text("THIS HELPS US KEEP YOU HEALTHY"
-              ,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 10
-              ),
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            DiseaseButton(
-                text: "Diabetes"
-            ),
-            const SizedBox(
-              height: 50,
-            ),
-            DiseaseButton(
-                text: "Pressure "
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            // DiseaseButton(
-            //     text: "Liver "
-            // )
-            ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(88, 36),
-                  backgroundColor: click?const Color(0xff3B3B3B):const Color(0xFF790023),
-                  textStyle: const TextStyle(fontSize: 20),
-                  padding: const EdgeInsets.only(
-                      left: 72,
-                      right: 72,
-                      top: 23,
-                      bottom: 23
-                  ),
+              const Text("DO YOU SUFFER FROM",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20
                 ),
+              ),
+              const SizedBox(
+                height: 3,
+              ),
+              const Text("ANY DISEASE?, CHOOSE IT"
+          
+                ,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text("THIS HELPS US KEEP YOU HEALTHY"
+                ,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 10
+                ),
+              ),
+              const SizedBox(
+                height: 35,
+              ),
+              DiseaseButton(
+                  text: "Diabetes"
+              ),
 
-                onPressed: () async{
-                  setState(() {
-                    click=unClick;
+              const SizedBox(
+                height: 35,
+              ),
+              DiseaseButton(
+                  text: "Pressure "
+              ),
+          
+              const SizedBox(
+                height: 35,
+              ),
+              DiseaseButton(
+                  text: "Insulin resistance"
+              ),
+          
+              const SizedBox(
+                height: 35,
+              ),
+              DiseaseButton(
+                  text: "High cholesterol"
+              ),
+          
+              const SizedBox(
+                height: 35,
+              ),
+              DiseaseButton(
+                  text: "Pregnancy"
+              ),
 
-                  });
-                },
-                child:
-                FittedBox(
-                  fit: BoxFit.fitWidth,
-                  child: Text(
-                  "Liver",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      //fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                )
+              const SizedBox(
+                height: 35,
+              ),
+              DiseaseButton(
+                  text: "High thyroid hormone"
+              ),
 
-            )
+              const SizedBox(
+                height: 35,
+              ),
+              DiseaseButton(
+                  text: "Kidney disease"
+              ),
 
-
-          ],
+              const SizedBox(
+                height: 35,
+              ),
+              DiseaseButton(
+                  text: "Mediterranean fever"
+              ),
+            ],
+          ),
         ),
       ),
       floatingActionButton: Padding(
@@ -137,7 +142,7 @@ class _DiseaseState extends State<Disease> {
        bottom: 30
          ),
         child: NextButton(
-            page: NavButtons()
+            page: Food()
         ),
 
       ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled5/Home/nav_buttons.dart';
 import 'package:untitled5/User_information/disease/Disease.dart';
@@ -41,9 +42,6 @@ class _FoodState extends State<Food> {
       body: Center(
         child: Column(
           children: [
-            const SizedBox(
-              height: 100,
-            ),
             const Text("DO YOU SUFFER FROM",
               style: TextStyle(
                   color: Colors.white,
@@ -75,29 +73,62 @@ class _FoodState extends State<Food> {
               ),
             ),
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
-            FoodButtons(text: "Legumes"),
+
+            SingleChildScrollView(
+              child: Column(
+                children: [
+                  FoodButtons(text: "Legumes"),
+
+
+
             const SizedBox(
-              height: 50,
+              height: 30,
             ),
             FoodButtons(text: "Egg"),
-            SizedBox(
-              height: 50,
+            const SizedBox(
+              height: 30,
             ),
-            // DiseaseButton(
-            //     text: "Liver "
-            // )
-
-
+            FoodButtons(text: "Fish"),
+            const SizedBox(
+              height: 30,
+            ),
+            FoodButtons(text: "Dairy"),
+            const SizedBox(
+              height: 30,
+            ),
+            FoodButtons(text: "Spices"),
+            const SizedBox(
+              height: 30,
+            ),
+            FoodButtons(text: "Sugars"),
+            const SizedBox(
+              height: 30,
+            ),
+            FoodButtons(text: "Meat"),
+            const SizedBox(
+              height: 30,
+            ),
+            FoodButtons(text: "Nuts"),
+            const SizedBox(
+              height: 30,
+            ),
+            FoodButtons(text: "Chicken"),
+            const SizedBox(
+              height: 30,
+            ),
           ],
         ),
+            ),],
+            ),
+
       ),
       floatingActionButton: Padding(
 
         padding: const EdgeInsets.only(
             right: 10,
-            bottom: 30
+            bottom: 30,
         ),
         child: NextButton(
             page: NavButtons()

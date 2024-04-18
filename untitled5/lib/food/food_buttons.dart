@@ -15,17 +15,13 @@ class _FoodButtonsState extends State<FoodButtons> {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(20,20),
+          minimumSize: Size(135,20),
           backgroundColor:
           click ? const Color(0xff3B3B3B) : const Color(0xFF790023),
           textStyle: const TextStyle(fontSize: 20),
           padding:
-          const EdgeInsets.only(
-              left: 32,
-              right:43 ,
-              top: 1,
-              bottom: 3
-          ),
+          const EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),
+
         ),
         onPressed: () {
           setState(() {

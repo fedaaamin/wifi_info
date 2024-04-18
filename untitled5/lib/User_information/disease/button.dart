@@ -20,7 +20,7 @@ class _DiseaseButtonState extends State<DiseaseButton> {
               click ? const Color(0xff3B3B3B) : const Color(0xFF790023),
           textStyle: const TextStyle(fontSize: 20),
           padding:
-              const EdgeInsets.only(left: 52, right: 52, top: 23, bottom: 23),
+              const EdgeInsets.only(left: 40, right: 40, top: 18, bottom: 18),
         ),
         onPressed: () {
           setState(() {

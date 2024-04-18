@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                 bottom: 10
               ),
               child: Text(
-                  "HELLO mahmoud,",
+                  "HELLO Waleed,",
               style:TextStyle(
                 color: Colors.white,
                 fontSize: 20,
