@@ -16,9 +16,6 @@ class SignInGoogle extends StatefulWidget {
 class _SignInGoogleState extends State<SignInGoogle> {
   String url =
       "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees";
-  var index;
-  String urlCheck =
-      "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/CheckIfTraineeExists";
 
   Future signInWithGoogle() async {
     // Trigger the authentication flow
@@ -47,7 +44,7 @@ class _SignInGoogleState extends State<SignInGoogle> {
           url:
               "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/CheckIfTraineeExists?mail=${email}");
       print("=================================");
-      print(rs.toString());
+      print(rs);
       print("==================================================");
       if (rs == 1) {
         Navigator.push(context,
@@ -55,7 +52,7 @@ class _SignInGoogleState extends State<SignInGoogle> {
       } else if (rs == 0) {
         final dioHelper = DioHelper();
         await dioHelper
-            .postDate(url: url, data: {"firstName": name, "gmail": email});
+            .postDate(url: url, data: {"name": name, "gmail": email});
         // await ApiPost(name!, email);
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => const Gender()));
