@@ -5,20 +5,20 @@ import 'package:sign_button/sign_button.dart';
 import 'package:untitled5/Home/nav_buttons.dart';
 import 'package:untitled5/User_information/gender.dart';
 import 'package:untitled5/api/api_post.dart';
+
 class SignInGoogle extends StatefulWidget {
   const SignInGoogle({super.key});
 
   @override
   State<SignInGoogle> createState() => _SignInGoogleState();
+
 }
 
 class _SignInGoogleState extends State<SignInGoogle> {
-   String url =
-      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
-    int? index;
+  String url =
+      "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees";
 
-
-  Future signInWithGoogle() async {
+    Future<void> signInWithGoogle() async {
     // Trigger the authentication flow
     final googleSignIn = GoogleSignIn();
     googleSignIn.signOut();
@@ -29,7 +29,7 @@ class _SignInGoogleState extends State<SignInGoogle> {
       String? name = googleUser.displayName;
       String? email = googleUser.email;
       final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+      await googleUser.authentication;
 
       // Create a new credential
       final credential = GoogleAuthProvider.credential(
@@ -39,30 +39,39 @@ class _SignInGoogleState extends State<SignInGoogle> {
 
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
-      if(index==0){
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const NavButtons()));
-      }else if(index==1){
-        final dioHelper = DioHelper();
-        await dioHelper.postDate(
-            url: url,
-            data: {
-              "trainee":
-              {
-                "firstName": name,
-                "gmail": email
-              }
-            });
-        // await ApiPost(name!, email);
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const Gender()));
-      }
-      }
-     
 
+      print("=================================");
+      final dioHelper = DioHelper();
+      final rs = await dioHelper.getData(
+          url:
+          "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/CheckIfTraineeExists?mail=${email}");
+      print("=================================");
+      print(rs.statusCode); // Assuming you're interested in the status code
+      print(rs.data); // Assuming you're interested in the response data
+      print("==================================================");
+
+      if (rs.statusCode == 200) { // Adjust status code according to your API response
+        if (rs.data == 1) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const NavButtons()),
+          );
+        } else if (rs.data == 0) {
+          final dioHelper = DioHelper();
+          await dioHelper.postDate(url: url, data: {"name": name, "gmail": email});
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Gender()),
+          );
+        }
+      } else {
+        // Handle error case
+        print("Error occurred while fetching data");
+      }
+    }
   }
 
-  @override
+
   Widget build(BuildContext context) {
     return SignInButton(
         buttonSize: ButtonSize.large,

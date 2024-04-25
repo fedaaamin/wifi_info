@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home:Logo(),
+      home:Food(),
       // Logo(),
       //  NavButtons(),
       navigatorKey: navigatorKey,
