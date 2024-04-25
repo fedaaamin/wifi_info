@@ -19,12 +19,14 @@ class DioHelper {
   Future<Response<dynamic>> getData({
     required String url,
     Map<String, dynamic>? query,
+    Map<String, dynamic>? data,
     bool enableRetry = true,
   }) async {
     try {
       final response = await init().get<dynamic>(
         url,
         queryParameters: query,
+        data: data
       );
       return response;
     } on DioException catch (e) {

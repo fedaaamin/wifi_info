@@ -5,6 +5,7 @@ import 'package:sign_button/sign_button.dart';
 import 'package:untitled5/Home/nav_buttons.dart';
 import 'package:untitled5/User_information/gender.dart';
 import 'package:untitled5/api/api_post.dart';
+
 class SignInGoogle extends StatefulWidget {
   const SignInGoogle({super.key});
 
@@ -13,10 +14,11 @@ class SignInGoogle extends StatefulWidget {
 }
 
 class _SignInGoogleState extends State<SignInGoogle> {
-   String url =
-      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
-    int? index;
-
+  String url =
+      "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees";
+  var index;
+  String urlCheck =
+      "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/CheckIfTraineeExists";
 
   Future signInWithGoogle() async {
     // Trigger the authentication flow
@@ -39,27 +41,26 @@ class _SignInGoogleState extends State<SignInGoogle> {
 
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
-      if(index==0){
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => const NavButtons()));
-      }else if(index==1){
+      print("=================================");
+      final dioHelper = DioHelper();
+      final rs = dioHelper.getData(
+          url:
+              "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/CheckIfTraineeExists?mail=${email}");
+      print("=================================");
+      print(rs.toString());
+      print("==================================================");
+      if (rs == 1) {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const NavButtons()));
+      } else if (rs == 0) {
         final dioHelper = DioHelper();
-        await dioHelper.postDate(
-            url: url,
-            data: {
-              "trainee":
-              {
-                "firstName": name,
-                "gmail": email
-              }
-            });
+        await dioHelper
+            .postDate(url: url, data: {"firstName": name, "gmail": email});
         // await ApiPost(name!, email);
         Navigator.push(
             context, MaterialPageRoute(builder: (context) => const Gender()));
       }
-      }
-     
-
+    }
   }
 
   @override
