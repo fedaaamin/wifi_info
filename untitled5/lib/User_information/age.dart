@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/buttons/next_button.dart';
-import 'package:intl/intl.dart';
+
 
 import 'weight.dart';
 

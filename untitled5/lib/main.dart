@@ -1,15 +1,11 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled5/Home/home_page.dart';
-import 'package:untitled5/Home/nav_buttons.dart';
-import 'package:untitled5/User_information/disease/Disease.dart';
 import 'package:untitled5/api/api_post.dart';
-import 'package:untitled5/food/food.dart';
-import 'package:untitled5/home.dart';
-import 'package:untitled5/logo.dart';
 import 'package:untitled5/notifications/notifications.dart';
 import 'package:untitled5/notifications/notifications_firebase.dart';
+
+import 'logo.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 String? title;
@@ -42,7 +38,7 @@ void main() async {
   ));
   DioHelper.init();
   NotificationsFirebase().intiNotifications();
-  // FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
+  FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
   runApp(const MyApp());
 }
 
@@ -55,9 +51,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home:Logo(),
-      // Logo(),
-      //  NavButtons(),
+      home: Logo(),
       navigatorKey: navigatorKey,
       routes: {
         "/notificationsHome": (context) => NotificationsHome(

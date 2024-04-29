@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:untitled5/User_information/disease/Disease.dart';
 import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/buttons/next_button.dart';
 
-import 'days/day_time.dart';
 import 'goal.dart';
 
 class Levels extends StatefulWidget {
@@ -53,14 +53,14 @@ class _GoalsState extends State<Levels> {
               Container(
                 color: Colors.black,
                 width: 400,
-                height: 400,
+                height: 300,
                 child: CupertinoPicker(
                     scrollController:
                         FixedExtentScrollController(initialItem: index),
                     diameterRatio: 1,
                     useMagnifier: true,
                     magnification: 1.3,
-                    itemExtent: 30,
+                    itemExtent: 50,
                     onSelectedItemChanged: (int i) async {
                       setState(() {
                         index = i;
@@ -74,22 +74,27 @@ class _GoalsState extends State<Levels> {
                       Text(
                         'Rookie',
                         style: TextStyle(
-                            color: index == 0 ? Colors.white : Colors.grey),
+                            color: index == 0 ? Colors.white : Colors.grey,
+                            fontSize: 30),
                       ),
                       Text(
                         'Beginner',
                         style: TextStyle(
-                            color: index == 1 ? Colors.white : Colors.grey),
+                            color: index == 1 ? Colors.white : Colors.grey,
+                            fontSize: 30),
                       ),
                       Text('Intermediate',
                           style: TextStyle(
-                              color: index == 2 ? Colors.white : Colors.grey)),
+                              color: index == 2 ? Colors.white : Colors.grey,
+                              fontSize: 30)),
                       Text('Advance',
                           style: TextStyle(
-                              color: index == 3 ? Colors.white : Colors.grey)),
+                              color: index == 3 ? Colors.white : Colors.grey,
+                              fontSize: 30)),
                       Text('True Beast',
                           style: TextStyle(
-                              color: index == 4 ? Colors.white : Colors.grey))
+                              color: index == 4 ? Colors.white : Colors.grey,
+                              fontSize: 30))
                     ]),
               )
             ],
@@ -110,7 +115,7 @@ class _GoalsState extends State<Levels> {
               const SizedBox(
                 width: 180,
               ),
-              NextButton(page: Days())
+              NextButton(page: Disease())
             ],
           ),
         ),
