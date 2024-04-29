@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled5/User_information/disease/button.dart';
+import 'package:untitled5/User_information/food/food.dart';
 import 'package:untitled5/buttons/next_button.dart';
-import 'package:untitled5/food/food.dart';
+
 
 import '../age.dart';
 
@@ -13,9 +14,6 @@ class Disease extends StatefulWidget {
 }
 
 class _DiseaseState extends State<Disease> {
-  bool click = true;
-  bool unClick = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -9,23 +9,27 @@ class DiseaseButton extends StatefulWidget {
 }
 
 class _DiseaseButtonState extends State<DiseaseButton> {
-  bool click = true;
-  bool unClick = false;
+  Color buttonColor1=Color(0xff3B3B3B);
+  Color buttonColor2=Color(0xFF790023);
+  _swapColors() {
+    setState(() {
+      final temp = buttonColor1;
+      buttonColor1 = buttonColor2;
+      buttonColor2 = temp;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           minimumSize: Size(88, 36),
-          backgroundColor:
-              click ? const Color(0xff3B3B3B) : const Color(0xFF790023),
+          backgroundColor:buttonColor1,
           textStyle: const TextStyle(fontSize: 20),
           padding:
               const EdgeInsets.only(left: 40, right: 40, top: 18, bottom: 18),
         ),
         onPressed: () {
-          setState(() {
-            click = unClick;
-          });
+          _swapColors();
         },
         child: FittedBox(
           fit: BoxFit.fitWidth,

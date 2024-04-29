@@ -28,7 +28,7 @@ class _HeightState extends State<Height> {
                   height: 100,
                 ),
                 const Text(
-                  "WHAT’S YOUR WEIGHT?",
+                  "WHAT’S YOUR HEIGHT?",
                   style: TextStyle(
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
