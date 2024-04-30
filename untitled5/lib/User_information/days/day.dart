@@ -29,7 +29,7 @@ class _DayState extends State<Day> {
       )
         ,onPressed: (){
        _swapColors();
-       chooseDay=[widget.numberOfDay];
+       chooseDay?.add(widget.numberOfDay);
     },
         child: Text(
         widget.day,

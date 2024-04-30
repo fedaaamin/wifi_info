@@ -10,15 +10,14 @@ import 'User_information/height.dart';
 import 'User_information/weight.dart';
 import 'api/api_post.dart';
 String url =
-    "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees/$userId";
+    "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees";
 
 Future<void> PostUserInfo() async {
   try{
   final dioHelper = DioHelper();
-  final  rs=await dioHelper.update(
+  final  rs=await dioHelper.postDate(
       url:url,
   data: {
-    "traineeId": userId,
     "name": userName,
     "gmail": userEmail,
     "gender": userGender,
