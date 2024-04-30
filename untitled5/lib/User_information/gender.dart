@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/buttons/next_button.dart';
-import 'package:untitled5/get-user_info.dart';
-import 'package:untitled5/sign%20in/sign_in_google.dart';
-
 import 'age.dart';
-
+ String? userGender;
 class Gender extends StatefulWidget {
   const Gender({super.key});
 
@@ -80,36 +76,10 @@ class Gender extends StatefulWidget {
                         onPressed: () async {
 
                           _swapColors();
-                          try {
-                            final dioHelper = DioHelper();
+                          setState(() {
+                            userGender="female";
+                          });
 
-                            final rs = await dioHelper.update(
-                                url: "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees/${userId}"
-                                , data: {
-                              // "traineeId": 31,
-                              "name": "Fedaa Amin",
-                              "gmail": "fedaa1234amin@gmail.com",
-                              "gender":
-                              'female',
-                              "purpose": "eee",
-                              "dateOfBirth": "2024-04-25T17:14:42.8830926",
-                              "height": 150,
-                              "weight": 30,
-                              "fitnessLevel": "",
-                              "requiredCalories": 831,
-                              "availabaleDays": [],
-                              "traineeSports": [],
-                              "traineeFoods": []
-                            });
-                            print(rs.data);
-                            print(rs.statusCode);
-                          } catch (e) {
-                            throw Exception(e.toString());
-                          }
-                          GetUserInfo();
-
-                          print("=====================================");
-                          print(dataMap);
                         },
                         icon: const Icon(
                           Icons.female,
@@ -132,22 +102,9 @@ class Gender extends StatefulWidget {
                       child: IconButton(
                         onPressed: () async {
                           _swapColors();
-                          try {
-                            final dioHelper = DioHelper();
-                            final rs = await dioHelper.update(
-                                url: "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees/${userId}"
-                                , data: {
-
-
-                              "gender": 'male',
-
-
-                            });
-                            print(rs.data);
-                            print(rs.statusCode);
-                          } catch (e) {
-                            throw Exception(e.toString());
-                          }
+                          setState(() {
+                            userGender="male";
+                          });
                         },
                         icon: const Icon(
                           Icons.male,

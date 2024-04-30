@@ -1,10 +1,10 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/buttons/next_button.dart';
 
 import 'height.dart';
+
+int? userWeight;
 
 class Weight extends StatefulWidget {
   const Weight({super.key});
@@ -15,106 +15,87 @@ class Weight extends StatefulWidget {
 
 class _WeightState extends State<Weight> {
   double selectedWeight = 50.0;
-  String url =
-      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor:Colors.black,
-        body: Center(
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 100,
-              ),
-              const Text("WHAT’S YOUR WEIGHT?",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20
+          backgroundColor: Colors.black,
+          body: Center(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 100,
                 ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              const Text("THIS HELP US CREATE YOUR PERSONALIZED PLAN"
-
-                ,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10
+                const Text(
+                  "WHAT’S YOUR WEIGHT?",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20),
                 ),
-              ),
-              const SizedBox(
-                height: 5,
-              ),
-              const Text("TO KNOW YOUR GENDER"
-                ,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 10
+                const SizedBox(
+                  height: 20,
                 ),
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Center(
-                  child:SizedBox(
+                const Text(
+                  "THIS HELP US CREATE YOUR PERSONALIZED PLAN",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 10),
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                const Text(
+                  "TO KNOW YOUR GENDER",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 10),
+                ),
+                const SizedBox(
+                  height: 50,
+                ),
+                Center(
+                  child: SizedBox(
                     width: 400,
                     height: 300,
                     child: CupertinoTheme(
                       data: const CupertinoThemeData(
                         brightness: Brightness.dark,
                       ),
-                      child:CupertinoPicker(
+                      child: CupertinoPicker(
                         itemExtent: 40,
-                        onSelectedItemChanged: (index)async {
+                        onSelectedItemChanged: (index) async {
                           setState(() {
                             selectedWeight = 30.0 + index.toDouble();
-
-                          });
-                          final dioHelper = DioHelper();
-                          await dioHelper.update(url: url, data: {
-                            "trainee":{
-                              "weight":selectedWeight
-                            }
+                            userWeight=selectedWeight.toInt();
                           });
                         },
-                        scrollController: FixedExtentScrollController(initialItem: selectedWeight.toInt()),
+                        scrollController: FixedExtentScrollController(
+                            initialItem: selectedWeight.toInt()),
                         diameterRatio: 1,
                         useMagnifier: true,
                         magnification: 1.3,
                         children: List.generate(150, (index) {
-                          return Text('${30 + index} kg',
-                          style: const TextStyle(
-
-
-                              fontSize: 30
-                          ),);
+                          return Text(
+                            '${30 + index} kg',
+                            style: const TextStyle(fontSize: 30),
+                          );
                         }),
                       ),
                     ),
-                    ),
-
-
-              )
-            ],
+                  ),
+                )
+              ],
+            ),
           ),
-        ),
-        floatingActionButton: Padding(
-
-          padding: const EdgeInsets.only(
-              right: 10,
-              bottom: 30
-          ),
-          child: NextButton(
-              page: Height()
-          ),
-        )
-      ),
+          floatingActionButton: Padding(
+            padding: const EdgeInsets.only(right: 10, bottom: 30),
+            child: NextButton(page: Height()),
+          )),
     );
   }
 }

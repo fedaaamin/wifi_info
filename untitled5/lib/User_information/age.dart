@@ -1,7 +1,6 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/buttons/next_button.dart';
 
 
@@ -13,14 +12,13 @@ class Age extends StatefulWidget {
   @override
   State<Age> createState() => _AgeState();
 }
-
+String? userAge;
 class _AgeState extends State<Age> {
   DateTime _selectedDate = DateTime.now();
 
 
   int index=0;
-  final String url =
-      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -82,13 +80,8 @@ class _AgeState extends State<Age> {
                           onDateTimeChanged:(newDate) async{
                             setState(() {
                               _selectedDate= newDate;
+                              userAge=_selectedDate.toString();
                             });
-                 final dioHelper = DioHelper();
-                   await dioHelper.postDate(url: url, data: {
-                   "trainee":{
-                   "dateOfBirth":_selectedDate
-                      }
-                      });
 
                           },
                         mode: CupertinoDatePickerMode.date,

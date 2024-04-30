@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled5/api/api_post.dart';
+
 import 'package:untitled5/buttons/next_button.dart';
 
 import 'goal.dart';
+int? userHeight;
 
 class Height extends StatefulWidget {
   const Height({super.key});
@@ -70,11 +71,10 @@ class _HeightState extends State<Height> {
                         onSelectedItemChanged: (index) async {
                           setState(() {
                             selectedHeight = index + 120;
+                            userHeight=selectedHeight;
+
                           });
-                          final dioHelper = DioHelper();
-                          await dioHelper.update(url: url, data: {
-                            "trainee": {"dateOfBirth": selectedHeight}
-                          });
+
                         },
                         scrollController: FixedExtentScrollController(
                             initialItem: selectedHeight),

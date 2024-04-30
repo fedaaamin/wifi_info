@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class Day extends StatefulWidget {
 final  String day;
-  const Day({required this.day,super.key});
+final int numberOfDay;
+
+  const Day({required this.day,super.key, required this.numberOfDay});
 
   @override
   State<Day> createState() => _DayState();
@@ -18,6 +20,7 @@ class _DayState extends State<Day> {
      buttonColor2 = temp;
    });
  }
+ List? chooseDay;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -26,6 +29,7 @@ class _DayState extends State<Day> {
       )
         ,onPressed: (){
        _swapColors();
+       chooseDay=[widget.numberOfDay];
     },
         child: Text(
         widget.day,

@@ -1,13 +1,31 @@
-import 'package:flutter/material.dart';
-import 'day.dart';
 
-class DayWidget extends StatelessWidget {
+import 'package:flutter/material.dart';
+import 'package:untitled5/User_information/days/day.dart';
+List? availableDays;
+class DayWidget extends StatefulWidget {
   const DayWidget({super.key});
+
+  @override
+  State<DayWidget> createState() => _DayWidgetState();
+}
+
+class _DayWidgetState extends State<DayWidget> {
+   List days=[
+     "",
+     "Saturday",
+     "Sunday",
+     "Monday",
+     "Tuesday",
+     "Wednesday",
+     "Thursday",
+     "Friday",
+
+   ];
 
   @override
   Widget build(BuildContext context) {
 
-    return const Column(
+    return  Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
@@ -18,15 +36,15 @@ class DayWidget extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Day(day: "Saturday"),
+            Day(day: days[1], numberOfDay: 1,),
               SizedBox(
                 width: 5,
               ),
-              Day(day: "Sunday"),
+          Day(day: days[2], numberOfDay: 2,),
               SizedBox(
                 width: 5,
               ),
-              Day(day: "Monday"),
+              Day(day: days[3], numberOfDay: 3,),
             ],
           ),
         ),
@@ -39,15 +57,15 @@ class DayWidget extends StatelessWidget {
           ),
           child: Row(
             children: [
-              Day(day: "Tuesday"),
+              Day(day: days[4], numberOfDay: 4,),
               SizedBox(
                 width: 5,
               ),
-              Day(day: "Wednesday"),
+              Day(day: days[5], numberOfDay: 5,),
               SizedBox(
                 width: 4,
               ),
-              Day(day: "Thursday"),
+              Day(day: days[6], numberOfDay: 6,),
             ],
           ),
         ),
@@ -56,7 +74,7 @@ class DayWidget extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.only(left: 10),
-          child: Day(day: "Friday"),
+          child:  Day(day: days[7], numberOfDay: 7,),
         )
       ],
     );

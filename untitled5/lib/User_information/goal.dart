@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:untitled5/api/api_post.dart';
+
 import 'package:untitled5/buttons/next_button.dart';
 
 import 'activity.dart';
@@ -11,12 +11,16 @@ class Goals extends StatefulWidget {
   @override
   State<Goals> createState() => _GoalsState();
 }
-
+ String? userPurpose;
 class _GoalsState extends State<Goals> {
   int index = 0;
-  String url =
-      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
-
+List purpose=[
+  'Gain Weight',
+  'Lose weight',
+  'Get fitter',
+  'Gain more flexible',
+  'Learn the basic',
+];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -62,11 +66,9 @@ class _GoalsState extends State<Goals> {
                       onSelectedItemChanged: (int i) async {
                         setState(() {
                           index = i;
+                          userPurpose=purpose[index];
                         });
-                        final dioHelper = DioHelper();
-                        await dioHelper.update(url: url, data: {
-                          "trainee": {"purpose": index}
-                        });
+
                       },
                       children: <Widget>[
                         Text(

@@ -7,6 +7,7 @@ import 'package:untitled5/api/api_post.dart';
 
 var userId;
 String? userName;
+String? userEmail;
 
 class SignInGoogle extends StatefulWidget {
   const SignInGoogle({super.key});
@@ -27,8 +28,8 @@ class _SignInGoogleState extends State<SignInGoogle> {
 
     // Obtain the auth details from the request
     if (googleUser != null) {
-      String? name = googleUser.displayName;
-      String? email = googleUser.email;
+      userName = googleUser.displayName;
+      userEmail = googleUser.email;
       final GoogleSignInAuthentication googleAuth =
           await googleUser.authentication;
 
@@ -47,11 +48,12 @@ class _SignInGoogleState extends State<SignInGoogle> {
       print("=================================");
       final rs = await dioHelper.getData(
           url:
-              "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/CheckIfTraineeExists/${email}");
+              "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/CheckIfTraineeExists/${userEmail}");
       print("=================================");
       print(rs.statusCode); // Assuming you're interested in the status code
       print(rs.data); // Assuming you're interested in the response data
       print("==================================================");
+
       print("=================================");
 
       if (rs.statusCode == 200) {
@@ -62,9 +64,17 @@ class _SignInGoogleState extends State<SignInGoogle> {
             MaterialPageRoute(builder: (context) => const Gender()),
           );
         } else if (rs.data == 0) {
-          final dioHelper = DioHelper();
-          await dioHelper
-              .postDate(url: url, data: {"name": name, "gmail": email});
+          setState(() async{
+
+          await  dioHelper.postDate(url: url,
+
+                data: {
+                  "traineeId": userId,
+                  "name": userName,
+                  "gmail": userEmail,
+                }
+            );
+          });
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const Gender()),
@@ -76,16 +86,20 @@ class _SignInGoogleState extends State<SignInGoogle> {
       }
       final id = await dioHelper.getData(
           url:
-              "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/GetId/${email}");
+              "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/GetId/${userEmail}");
       print("=================================");
       print(id.statusCode); // Assuming you're interested in the status code
       print(id.data); // Assuming you're interested in the response data
       print("==================================================");
-      userId = id.data;
-      userName=name;
-      print(userId);
+      setState(() {
+        userId = id.data;
+        print(userId);
+      });
+
 
       print("=================================");
+      print(userEmail);
+      print(userName);
     }
   }
 

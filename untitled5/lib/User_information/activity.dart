@@ -1,11 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled5/User_information/disease/Disease.dart';
-import 'package:untitled5/api/api_post.dart';
+
 import 'package:untitled5/buttons/next_button.dart';
 
 import 'goal.dart';
-
+String? userLevel;
 class Levels extends StatefulWidget {
   const Levels({super.key});
 
@@ -15,9 +15,13 @@ class Levels extends StatefulWidget {
 
 class _GoalsState extends State<Levels> {
   int index = 0;
-  final String url =
-      "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
-
+ List levels=[
+   'Rookie',
+   'Beginner',
+   'Intermediate',
+   'Advance',
+   'True Beast',
+ ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -64,11 +68,9 @@ class _GoalsState extends State<Levels> {
                     onSelectedItemChanged: (int i) async {
                       setState(() {
                         index = i;
+                        userLevel=levels[i];
                       });
-                      final dioHelper = DioHelper();
-                      await dioHelper.postDate(url: url, data: {
-                        "trainee": {"dateOfBirth": index}
-                      });
+
                     },
                     children: <Widget>[
                       Text(
