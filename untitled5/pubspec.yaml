@@ -55,6 +55,7 @@ dependencies:
   extended_image: ^8.2.0
   video_player: ^2.8.6
   syncfusion_flutter_gauges: ^25.1.42
+  flutter_xlider: ^3.5.0
 
 
 

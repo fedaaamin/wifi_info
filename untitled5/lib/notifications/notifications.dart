@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:untitled5/Home/Sports/Sports.dart';
 import 'package:untitled5/Home/Sports/video.dart';
-
 
 String? title;
 String? body;
@@ -29,15 +27,16 @@ class _NotificationHomesState extends State<NotificationsHome> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>VideoApp(
-                      url:"https://youtu.be/GKBJf0dR4mw" ,
-                    )))
-                    ;
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => VideoApp(
+                                  url: "https://youtu.be/GKBJf0dR4mw",
+                                )));
                   },
                   child: Text("run"),
                 ),
               ),
-              
             ],
           ),
         ),

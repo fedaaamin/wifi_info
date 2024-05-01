@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
-import 'package:untitled5/Home/Activity/Radial.dart';
 import 'package:untitled5/Home/Activity/steps.dart';
 import 'package:untitled5/Home/home_page.dart';
-import 'package:untitled5/Home/user_food/api_meals.dart';
 import 'package:untitled5/Home/user_food/food_card.dart';
 import 'package:untitled5/notifications/notifications.dart';
 
@@ -38,15 +36,14 @@ class _NavButtonsState extends State<NavButtons> {
             ),
           ),
           PersistentTabConfig(
-            screen: NotificationsHome(
-            ),
+            screen: NotificationsHome(),
             item: ItemConfig(
               icon: Icon(Iconsax.notification),
               activeForegroundColor: Colors.white,
             ),
           ),
           PersistentTabConfig(
-            screen:Radial(),
+            screen: FoodCard(),
             item: ItemConfig(
               icon: Icon(Iconsax.profile_circle5),
               activeForegroundColor: Colors.white,

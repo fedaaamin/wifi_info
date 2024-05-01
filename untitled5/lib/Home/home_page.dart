@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:untitled5/Home/Sports/ui_sports.dart';
-import 'package:untitled5/Home/user_food/api_meals.dart';
 import 'package:untitled5/Home/user_food/food_card.dart';
 import 'package:untitled5/sign%20in/sign_in_google.dart';
 
@@ -77,14 +76,12 @@ class _HomePageState extends State<HomePage> {
                       child: SizedBox(
                         width: 304,
                         height: 172,
-                        child:  GestureDetector(
+                        child: GestureDetector(
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => UiSports()
-                                )
-                            );
+                                    builder: (context) => UiSports()));
                           },
                           child: Image.asset(
                             "images/img_5.png",
@@ -119,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
                 ),
-               FoodCard()
+                FoodCard()
               ],
             ),
           ),
