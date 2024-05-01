@@ -15,11 +15,9 @@ class Goals extends StatefulWidget {
 class _GoalsState extends State<Goals> {
   int index = 0;
 List purpose=[
-  'Gain Weight',
-  'Lose weight',
-  'Get fitter',
-  'Gain more flexible',
-  'Learn the basic',
+  "Muscle Dehydration",
+  "Body Building",
+  "weight stability"
 ];
   @override
   Widget build(BuildContext context) {
@@ -72,29 +70,23 @@ List purpose=[
                       },
                       children: <Widget>[
                         Text(
-                          'Gain Weight',
+                      "Muscle Dehydration",
                           style: TextStyle(
                               color: index == 0 ? Colors.white : Colors.grey,
                               fontSize: 30),
                         ),
                         Text(
-                          'Lose weight',
+                          "Body Building",
                           style: TextStyle(
                               color: index == 1 ? Colors.white : Colors.grey,
                               fontSize: 30),
                         ),
-                        Text('Get fitter',
+                        Text(
+                            "weight stability",
                             style: TextStyle(
                                 color: index == 2 ? Colors.white : Colors.grey,
                                 fontSize: 30)),
-                        Text('Gain more flexible',
-                            style: TextStyle(
-                                color: index == 3 ? Colors.white : Colors.grey,
-                                fontSize: 30)),
-                        Text('Learn the basic',
-                            style: TextStyle(
-                                color: index == 4 ? Colors.white : Colors.grey,
-                                fontSize: 30))
+
                       ]),
                 )
               ],

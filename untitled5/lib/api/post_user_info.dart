@@ -1,28 +1,28 @@
 
+import 'package:untitled5/User_information/days/day.dart';
 import 'package:untitled5/sign%20in/sign_in_google.dart';
 
-import 'User_information/activity.dart';
-import 'User_information/age.dart';
-import 'User_information/days/day widget.dart';
-import 'User_information/gender.dart';
-import 'User_information/goal.dart';
-import 'User_information/height.dart';
-import 'User_information/weight.dart';
-import 'api/api_post.dart';
+import '../User_information/activity.dart';
+import '../User_information/age.dart';
+import '../User_information/gender.dart';
+import '../User_information/goal.dart';
+import '../User_information/height.dart';
+import '../User_information/weight.dart';
+import 'api_post.dart';
 String url =
-    "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees";
+    "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees/${userId}";
 
 Future<void> PostUserInfo() async {
   try{
   final dioHelper = DioHelper();
-  final  rs=await dioHelper.postDate(
-      url:url,
+  final  rs=await dioHelper.update(
+      url:"http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees/${userId}",
   data: {
     "name": userName,
     "gmail": userEmail,
     "gender": userGender,
     "purpose": userPurpose,
-    "dateOfBirth":"2002-04-02T00:59:34.527",
+    "dateOfBirth":userAge?.toIso8601String(),
     "height": userHeight,
     "weight": userWeight,
     "fitnessLevel": userLevel,

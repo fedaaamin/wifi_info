@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled5/User_information/disease/Disease.dart';
-
 import 'package:untitled5/buttons/next_button.dart';
 
 import 'goal.dart';
+
 String? userLevel;
+
 class Levels extends StatefulWidget {
   const Levels({super.key});
 
@@ -15,13 +16,14 @@ class Levels extends StatefulWidget {
 
 class _GoalsState extends State<Levels> {
   int index = 0;
- List levels=[
-   'Rookie',
-   'Beginner',
-   'Intermediate',
-   'Advance',
-   'True Beast',
- ];
+  List levels = [
+    'Rookie',
+    'Beginner',
+    'Intermediate',
+    'Advance',
+    'True Beast',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -68,35 +70,27 @@ class _GoalsState extends State<Levels> {
                     onSelectedItemChanged: (int i) async {
                       setState(() {
                         index = i;
-                        userLevel=levels[i];
+                        userLevel = levels[i];
                       });
-
                     },
                     children: <Widget>[
                       Text(
-                        'Rookie',
+                        'low',
                         style: TextStyle(
                             color: index == 0 ? Colors.white : Colors.grey,
                             fontSize: 30),
                       ),
                       Text(
-                        'Beginner',
+                        'medium',
                         style: TextStyle(
                             color: index == 1 ? Colors.white : Colors.grey,
                             fontSize: 30),
                       ),
-                      Text('Intermediate',
+                      Text('high',
                           style: TextStyle(
                               color: index == 2 ? Colors.white : Colors.grey,
-                              fontSize: 30)),
-                      Text('Advance',
-                          style: TextStyle(
-                              color: index == 3 ? Colors.white : Colors.grey,
-                              fontSize: 30)),
-                      Text('True Beast',
-                          style: TextStyle(
-                              color: index == 4 ? Colors.white : Colors.grey,
-                              fontSize: 30))
+                              fontSize: 30)
+                      ),
                     ]),
               )
             ],

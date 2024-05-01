@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:sign_button/sign_button.dart';
+import 'package:untitled5/Home/nav_buttons.dart';
 import 'package:untitled5/User_information/gender.dart';
 import 'package:untitled5/api/api_post.dart';
 
@@ -61,10 +62,10 @@ class _SignInGoogleState extends State<SignInGoogle> {
         if (rs.data == 1) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Gender()),
+            MaterialPageRoute(builder: (context) => const NavButtons()),
           );
         } else if (rs.data == 0) {
-          setState(() async{
+
 
           await  dioHelper.postDate(url: url,
 
@@ -74,7 +75,7 @@ class _SignInGoogleState extends State<SignInGoogle> {
                   "gmail": userEmail,
                 }
             );
-          });
+
           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const Gender()),

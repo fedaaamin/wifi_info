@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+List? availableDays;
 class Day extends StatefulWidget {
 final  String day;
 final int numberOfDay;
@@ -20,7 +20,7 @@ class _DayState extends State<Day> {
      buttonColor2 = temp;
    });
  }
- List? chooseDay;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -29,7 +29,10 @@ class _DayState extends State<Day> {
       )
         ,onPressed: (){
        _swapColors();
-       chooseDay?.add(widget.numberOfDay);
+       setState(() {
+         availableDays?.addAll([widget.numberOfDay]);
+       });
+
     },
         child: Text(
         widget.day,

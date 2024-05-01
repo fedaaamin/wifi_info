@@ -5,6 +5,7 @@ import 'package:untitled5/buttons/next_button.dart';
 
 
 import 'weight.dart';
+DateTime? userAge;
 
 class Age extends StatefulWidget {
   const Age({super.key});
@@ -12,7 +13,7 @@ class Age extends StatefulWidget {
   @override
   State<Age> createState() => _AgeState();
 }
-String? userAge;
+
 class _AgeState extends State<Age> {
   DateTime _selectedDate = DateTime.now();
 
@@ -80,7 +81,7 @@ class _AgeState extends State<Age> {
                           onDateTimeChanged:(newDate) async{
                             setState(() {
                               _selectedDate= newDate;
-                              userAge=_selectedDate.toString();
+                              userAge=_selectedDate;
                             });
 
                           },

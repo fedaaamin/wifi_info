@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:untitled5/Home/nav_buttons.dart';
-import 'package:untitled5/post_user_info.dart';
+import 'package:untitled5/User_information/age.dart';
+import 'package:untitled5/api/post_user_info.dart';
 import 'package:untitled5/sign%20in/sign_in_google.dart';
 
 import 'day widget.dart';
+import 'day.dart';
 
 class Days extends StatefulWidget {
   const Days({super.key});
@@ -20,6 +22,12 @@ class _DaysState extends State<Days> {
   Color buttonColor2 = Color(0xff3B3B3B);
   String url =
       "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees";
+  @override
+  void setState(VoidCallback fn) {
+    // TODO: implement setState
+    availableDays;
+    super.setState(fn);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -157,8 +165,11 @@ class _DaysState extends State<Days> {
                 context,
                 MaterialPageRoute(builder: (context) => NavButtons()),
               );
-              PostUserInfo();
+               PostUserInfo();
               print(userId);
+              print("==========================");
+              print(availableDays);
+              print(userAge);
             },
             backgroundColor: Colors.white,
             label: const Text(

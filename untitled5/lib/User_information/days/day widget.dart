@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:untitled5/User_information/days/day.dart';
-List? availableDays;
+
 class DayWidget extends StatefulWidget {
   const DayWidget({super.key});
 

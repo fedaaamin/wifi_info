@@ -5,8 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22ae792d-e704-4c24-80ee-0e9889f677a0" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/untitled5/images/Toast.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled5/images/img_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled5/lib/Home/Activity/Radial.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled5/lib/Home/Sports/Sports.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled5/lib/Home/Sports/ui_sports.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled5/lib/Home/Sports/video.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/untitled5/lib/Home/user_food/api_meals.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/Home/food_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/Home/user_food/food_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/Home/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/Home/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/Home/nav_buttons.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/Home/nav_buttons.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/User_information/activity.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/User_information/activity.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/User_information/age.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/User_information/age.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/User_information/days/day widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/User_information/days/day widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/untitled5/lib/User_information/days/day.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/User_information/days/day.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/untitled5/lib/post_user_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/post_user_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/User_information/days/day_time.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/User_information/days/day_time.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/User_information/gender.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/User_information/gender.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/User_information/goal.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/User_information/goal.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/notifications/notifications.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/notifications/notifications.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/post_user_info.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/api/post_user_info.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/lib/sign in/sign_in_google.dart" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/lib/sign in/sign_in_google.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/untitled5/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/untitled5/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +37,13 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,12 +67,24 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "test1",
     "io.flutter.reload.alreadyRun": "true",
-    "settings.editor.selected.configurable": "flutter.settings",
+    "last_opened_file_path": "C:/Users/Computec/test/untitled5/images",
+    "settings.editor.selected.configurable": "preferences.editor",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Computec\test\untitled5\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Computec\test\untitled5\lib\Home\Sports" />
+      <recent name="C:\Users\Computec\test\untitled5\lib\Home\user_food" />
+      <recent name="C:\Users\Computec\test\untitled5\lib\api" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/untitled5/lib/main.dart" />
@@ -67,7 +108,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714443388102</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <option name="closed" value="true" />
+      <created>1714475496134</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714475496135</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

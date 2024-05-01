@@ -77,7 +77,7 @@ class Gender extends StatefulWidget {
 
                           _swapColors();
                           setState(() {
-                            userGender="female";
+                            userGender="Female";
                           });
 
                         },
@@ -103,7 +103,7 @@ class Gender extends StatefulWidget {
                         onPressed: () async {
                           _swapColors();
                           setState(() {
-                            userGender="male";
+                            userGender="Male";
                           });
                         },
                         icon: const Icon(
