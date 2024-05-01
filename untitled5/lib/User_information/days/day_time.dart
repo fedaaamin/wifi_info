@@ -22,6 +22,7 @@ class _DaysState extends State<Days> {
   Color buttonColor2 = Color(0xff3B3B3B);
   String url =
       "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees";
+
   @override
   void setState(VoidCallback fn) {
     // TODO: implement setState
@@ -165,7 +166,7 @@ class _DaysState extends State<Days> {
                 context,
                 MaterialPageRoute(builder: (context) => NavButtons()),
               );
-               PostUserInfo();
+              PostUserInfo();
               print(userId);
               print("==========================");
               print(availableDays);

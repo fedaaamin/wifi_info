@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled5/sign%20in/Sign_in_facebook.dart';
+
 import 'sign_in_google.dart';
 
 class SignIn extends StatefulWidget {
@@ -8,13 +9,13 @@ class SignIn extends StatefulWidget {
   @override
   State<SignIn> createState() => _SignInState();
 }
+
 class _SignInState extends State<SignIn> {
- @override
+  @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       resizeToAvoidBottomInset: false,
-      body:
-      Container(
+      body: Container(
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("images/img_1.png"),
@@ -24,7 +25,6 @@ class _SignInState extends State<SignIn> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-
             Container(
               width: 600,
               height: 400,
@@ -37,35 +37,28 @@ class _SignInState extends State<SignIn> {
               ),
               child: const Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
-                  children:[
-
+                  children: [
                     Padding(
-
                       padding: EdgeInsets.only(
-                          top: 61,
-
+                        top: 61,
                       ),
                       child: Text(
                         'SIGN IN',
                         style: TextStyle(
-                          color: Colors.white,
+                            color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 30),
                       ),
                     ),
                     SizedBox(
-                       height: 56,
-                     ),
+                      height: 56,
+                    ),
                     SignInFacebook(),
-                     SizedBox(
-                        height: 44,
-                      ),
-                       SignInGoogle(),
-
-
-                    ]
-                ),
-
+                    SizedBox(
+                      height: 44,
+                    ),
+                    SignInGoogle(),
+                  ]),
             ),
           ],
         ),

@@ -8,7 +8,7 @@ class DioHelper {
         Dio(
           BaseOptions(
             baseUrl:
-            'http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com',
+                'http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com',
             validateStatus: (_) => true,
             contentType: Headers.jsonContentType,
             responseType: ResponseType.json,
@@ -23,11 +23,8 @@ class DioHelper {
     bool enableRetry = true,
   }) async {
     try {
-      final response = await init().get<dynamic>(
-        url,
-        queryParameters: query,
-        data: data
-      );
+      final response =
+          await init().get<dynamic>(url, queryParameters: query, data: data);
       return response;
     } on DioException catch (e) {
       throw Exception(
@@ -92,7 +89,6 @@ class DioHelper {
     }
   }
 
-
   Future<Response<dynamic>> update({
     required String url,
     Map<String, dynamic>? query,
@@ -109,6 +105,5 @@ class DioHelper {
     } catch (e) {
       throw Exception(e.toString());
     }
-
   }
 }

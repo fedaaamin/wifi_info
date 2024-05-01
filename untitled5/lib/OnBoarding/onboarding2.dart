@@ -11,7 +11,6 @@ class landing2 extends StatelessWidget {
         children: [
           Image(
             image: AssetImage("images/img_3.png"),
-
           ),
           SizedBox(
             height: 66,
@@ -19,10 +18,7 @@ class landing2 extends StatelessWidget {
           Text(
             "CREATE A WORKOUT PLAN",
             style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              fontWeight: FontWeight.bold
-            ),
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 20,
@@ -30,10 +26,7 @@ class landing2 extends StatelessWidget {
           Text(
             "TO STAY FIT",
             style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              fontWeight: FontWeight.bold
-            ),
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 20,

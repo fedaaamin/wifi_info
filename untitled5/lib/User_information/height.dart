@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:untitled5/buttons/next_button.dart';
 
 import 'goal.dart';
+
 int? userHeight;
 
 class Height extends StatefulWidget {
@@ -17,6 +17,7 @@ class _HeightState extends State<Height> {
   int selectedHeight = 145;
   final String url =
       "http://11163230:60-dayfreetrial@fitnessapi-001-site1.itempurl.com/Api/Trainees";
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -71,10 +72,8 @@ class _HeightState extends State<Height> {
                         onSelectedItemChanged: (index) async {
                           setState(() {
                             selectedHeight = index + 120;
-                            userHeight=selectedHeight;
-
+                            userHeight = selectedHeight;
                           });
-
                         },
                         scrollController: FixedExtentScrollController(
                             initialItem: selectedHeight),

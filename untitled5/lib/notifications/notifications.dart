@@ -1,44 +1,151 @@
 import 'package:flutter/material.dart';
-import 'package:untitled5/Home/Sports/video.dart';
+import 'package:untitled5/notifications/New_notifications.dart';
 
-String? title;
-String? body;
-
-class NotificationsHome extends StatefulWidget {
-  final String? Title1;
-  final String? body;
-
-  const NotificationsHome({super.key, this.Title1, this.body});
+class Notifications extends StatefulWidget {
+  const Notifications({super.key});
 
   @override
-  State<NotificationsHome> createState() => _NotificationHomesState();
+  State<Notifications> createState() => _NotificationsState();
 }
 
-class _NotificationHomesState extends State<NotificationsHome> {
-  @override
+class _NotificationsState extends State<Notifications> {
+  bool firstTextSelected = false;
+  bool secondTextSelected = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Center(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => VideoApp(
-                                  url: "https://youtu.be/GKBJf0dR4mw",
-                                )));
-                  },
-                  child: Text("run"),
+        backgroundColor: Colors.black,
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 55, right: 55, top: 55),
+              child: Text(
+                "NOTIFICATIONS",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const SizedBox(
+              height: 35,
+            ),
+            Container(
+              width: 314,
+              height: 50,
+              decoration: BoxDecoration(
+                  color: const Color(0xff2C2C2E),
+                  borderRadius: BorderRadius.circular(30)),
+              child: Center(
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          firstTextSelected = !firstTextSelected;
+                          secondTextSelected = false;
+                        });
+                      },
+                      child: Container(
+                        width: 150,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: firstTextSelected
+                              ? const Color(0xff790023)
+                              : const Color(0xff2C2C2E),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            ' New',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          secondTextSelected = !secondTextSelected;
+                          firstTextSelected = false;
+                        });
+                      },
+                      child: Container(
+                        width: 164,
+                        height: 50,
+                        decoration: BoxDecoration(
+                          color: secondTextSelected
+                              ? const Color(0xff790023)
+                              : const Color(0xff2C2C2E),
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: const Center(
+                          child: Text(
+                            'All',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+            // Display text based on selection
+            if (firstTextSelected)
+              const Column(
+                children: [
+                  NewNotifications(title: "Drink Water",
+                      body: "Don't forget to drink water!", time: '7:00 pm'),
+                  SizedBox(height: 20,),
+                  NewNotifications(title: "Time for sleep",
+                      body: "You should be sleep now!", time: '10:00 pm',),
+                  SizedBox(height: 20,),
+                  NewNotifications(title: "Time for Activity",
+                      body: "Let's go to complete the Workout", time: '4:00 pm',),
+
+
+                ],
+              ),
+
+            if (secondTextSelected)
+              const SingleChildScrollView(
+                child: Column(
+                  children: [
+
+
+                    NewNotifications(title: "Time for sleep",
+                        body: "You should be sleep now!", time: '10:00 pm',),
+                    SizedBox(height: 20,),
+                    NewNotifications(title: "Drink Water",
+                        body: "Don't forget to drink water!", time: '7:00 pm',),
+                    SizedBox(height: 20,),
+                    NewNotifications(title: "Time for Activity",
+                        body: "Let's go to complete the Workout", time: '4:00 pm',),
+                    SizedBox(height: 20,),
+                    NewNotifications(
+                        title: "Congratulations", body:"35% your daily challenge completed", time: '2:30 pm 3Apr2023',),
+                    SizedBox(height: 20,),
+                    NewNotifications(title: "welcome", body: "Welcome to our App,Enjoy!", time: '9:10 am 1Feb2023',)
+
+                
+                
+                  ],
+                ),
+              ),
+              
+          ],
         ),
       ),
     );

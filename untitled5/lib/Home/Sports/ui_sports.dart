@@ -73,154 +73,156 @@ class _UiSportsState extends State<UiSports> {
               Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 18, left: 25, bottom: 12),
-                    child: Text(
-                      'Day 01 - Warm Up',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 25),
-                    child: Text(
-                      '04 Workouts for Beginner',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 13,
-
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsets.only(top: 18, left: 25, bottom: 12),
+                      child: Text(
+                        'Day 01 - Warm Up',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(
-                        left: 20,
-                        top: 12),
-                    child: Row(
-                      children: [
-                        Container(
-                          width: 120,
-                          height: 40,
-                          padding:EdgeInsetsDirectional.all(8),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Color(0xff2C2C2E)),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.play_circle,
-                                color: Colors.white,
-                              ),
-                              Spacer(),
-                              Text("10 min",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold
-                                ),
-                              )
-                            ],
-                          ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 25),
+                      child: Text(
+                        '04 Workouts for Beginner',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 13,
                         ),
-                        SizedBox(width: 18,),
-                        Container(
-                          width: 120,
-                          height: 40,
-                          padding:EdgeInsetsDirectional.all(8),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Color(0xff2C2C2E)),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.local_fire_department,
-                                color: Colors.white,
-                              ),
-                              Spacer(),
-                              Text("350 Cal",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, top: 12),
+                      child: Row(
+                        children: [
+                          Container(
+                            width: 120,
+                            height: 40,
+                            padding: EdgeInsetsDirectional.all(8),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xff2C2C2E)),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.play_circle,
+                                  color: Colors.white,
                                 ),
-                              )
-                            ],
+                                Spacer(),
+                                Text(
+                                  "10 min",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
                           ),
-                        )
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(23),
-                    child: Text(
-                      "Want your body to be healthy. Join our "
-                          "program with directions according to body’s goals."
-                          " Increasing physical strength is the goal of strenght training. "
-                          "Maintain body fitness by doing physical exercise at least 2-3 times a week. ",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                  ListView.builder(
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemCount: exercises.length,
-                    itemBuilder: (context, index) {
-                      Exercise exercise = exercises[index];
-                      return Expanded(
-                        child: Container(
-                          width: 328,
-                          height: 76,
-                          padding: EdgeInsetsDirectional.all(2),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
+                          SizedBox(
+                            width: 18,
                           ),
-                          child: Card(
-                            color: Color(0xff2C2C2E),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Row(
-                                children: [
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        exercise.name,
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 14),
-                                      ),
-                                      Text(
-                                        exercise.duration,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 13,
+                          Container(
+                            width: 120,
+                            height: 40,
+                            padding: EdgeInsetsDirectional.all(8),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Color(0xff2C2C2E)),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.local_fire_department,
+                                  color: Colors.white,
+                                ),
+                                Spacer(),
+                                Text(
+                                  "350 Cal",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(23),
+                      child: Text(
+                        "Want your body to be healthy. Join our "
+                        "program with directions according to body’s goals."
+                        " Increasing physical strength is the goal of strenght training. "
+                        "Maintain body fitness by doing physical exercise at least 2-3 times a week. ",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: exercises.length,
+                      itemBuilder: (context, index) {
+                        Exercise exercise = exercises[index];
+                        return Expanded(
+                          child: Container(
+                            width: 328,
+                            height: 76,
+                            padding: EdgeInsetsDirectional.all(2),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Card(
+                              color: Color(0xff2C2C2E),
+                              child: Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: Row(
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          exercise.name,
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14),
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                  Spacer(),
-                                  IconButton(
-                                      onPressed: () {
-                                        Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                                builder: (context) => VideoApp(
-                                                  url: exercise.videoLink,
-                                                )));
-                                      },
-                                      icon: Icon(Icons.play_circle_outline_sharp))
-                                ],
+                                        Text(
+                                          exercise.duration,
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 13,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    Spacer(),
+                                    IconButton(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      VideoApp(
+                                                        url: exercise.videoLink,
+                                                      )));
+                                        },
+                                        icon: Icon(
+                                            Icons.play_circle_outline_sharp))
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      );
-                    },
-                  ),
-                ]
-              )
+                        );
+                      },
+                    ),
+                  ])
             ],
           ),
         ),

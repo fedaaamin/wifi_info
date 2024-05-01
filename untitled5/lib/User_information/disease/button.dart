@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class DiseaseButton extends StatefulWidget {
   final String text;
+
   const DiseaseButton({super.key, required this.text});
 
   @override
@@ -9,8 +10,9 @@ class DiseaseButton extends StatefulWidget {
 }
 
 class _DiseaseButtonState extends State<DiseaseButton> {
-  Color buttonColor1=Color(0xff3B3B3B);
-  Color buttonColor2=Color(0xFF790023);
+  Color buttonColor1 = Color(0xff3B3B3B);
+  Color buttonColor2 = Color(0xFF790023);
+
   _swapColors() {
     setState(() {
       final temp = buttonColor1;
@@ -18,12 +20,13 @@ class _DiseaseButtonState extends State<DiseaseButton> {
       buttonColor2 = temp;
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           minimumSize: Size(88, 36),
-          backgroundColor:buttonColor1,
+          backgroundColor: buttonColor1,
           textStyle: const TextStyle(fontSize: 20),
           padding:
               const EdgeInsets.only(left: 40, right: 40, top: 18, bottom: 18),

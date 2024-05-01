@@ -18,10 +18,7 @@ class landing extends StatelessWidget {
           Text(
             "MEET YOUR BODY",
             style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-              fontWeight: FontWeight.bold
-            ),
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 20,
@@ -29,9 +26,7 @@ class landing extends StatelessWidget {
           Text(
             "START YOUR JOURNEY",
             style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
+                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 20,

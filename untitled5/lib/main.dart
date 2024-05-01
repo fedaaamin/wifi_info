@@ -54,7 +54,7 @@ class MyApp extends StatelessWidget {
       home: Logo(),
       navigatorKey: navigatorKey,
       routes: {
-        "/notificationsHome": (context) => NotificationsHome(
+        "/notificationsHome": (context) => Notifications(
             // Title: title, body: body,
             )
       },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../../api/api_post.dart';
 import '../../sign in/sign_in_google.dart';
 import 'api_meals.dart';
@@ -23,7 +24,7 @@ class _FoodCardState extends State<FoodCard> {
     final dioHelper = DioHelper();
     final response = await dioHelper.getData(
         url:
-        'http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Diet/$userId');
+            'http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Diet/$userId');
 
     // Parse the response JSON
     setState(() {
@@ -37,7 +38,7 @@ class _FoodCardState extends State<FoodCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SizedBox(height: 26),
+          const SizedBox(height: 26),
           buildMealCategory("Breakfast", apiMeals.breakfast, 0),
           buildMealCategory("Snack", apiMeals.snack, 1),
           buildMealCategory("Lunch", apiMeals.lunch, 2),
@@ -50,15 +51,14 @@ class _FoodCardState extends State<FoodCard> {
 
   Widget buildMealCategory(String category, List<AfterWork>? meals, int index) {
     if (meals == null || meals.isEmpty) {
-      return SizedBox.shrink(); // Return an empty SizedBox if no meals available
+      return const SizedBox
+          .shrink(); // Return an empty SizedBox if no meals available
     }
 
     bool isExpanded = _expandedIndex == index;
 
     return Padding(
-      padding: const EdgeInsets.only(
-        right: 15
-      ),
+      padding: const EdgeInsets.only(right: 15),
       child: Column(
         children: [
           GestureDetector(
@@ -72,42 +72,36 @@ class _FoodCardState extends State<FoodCard> {
               height: 43,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Color(0xff2C2C2E),
+                color: const Color(0xff2C2C2E),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(
-                      left: 7,
-                      top: 7
-                    ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 7, top: 7),
                     child: Icon(
-                        Icons.restaurant_menu_outlined,
+                      Icons.restaurant_menu_outlined,
                       color: Color(0xff790023),
                       size: 30,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(
-                        left: 16,
-                        bottom: 8,
-
+                      left: 16,
+                      bottom: 8,
                     ),
                     child: Text(
                       category,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                         color: Colors.white,
                       ),
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Icon(
-                    isExpanded
-                        ? Icons.arrow_drop_up
-                        : Icons.arrow_drop_down,
+                    isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down,
                     size: 30,
                     color: Colors.white,
                   ),
@@ -121,11 +115,11 @@ class _FoodCardState extends State<FoodCard> {
               height: 400,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Color(0xff2C2C2E),
+                color: const Color(0xff2C2C2E),
               ),
               child: ListView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
+                physics: const NeverScrollableScrollPhysics(),
                 itemCount: meals.length,
                 itemBuilder: (context, index) {
                   var meal = meals[index];
@@ -133,7 +127,7 @@ class _FoodCardState extends State<FoodCard> {
                 },
               ),
             ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
         ],
       ),
     );
@@ -146,7 +140,7 @@ class _FoodCardState extends State<FoodCard> {
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Color(0xff464646),
+          color: const Color(0xff464646),
         ),
         child: Row(
           children: [
@@ -159,11 +153,11 @@ class _FoodCardState extends State<FoodCard> {
                 fit: BoxFit.cover,
               ),
             ),
-            SizedBox(width: 16),
+            const SizedBox(width: 16),
             Text(
               itemName,
-              style: TextStyle(
-                fontSize: 20,
+              style: const TextStyle(
+                fontSize: 11,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),

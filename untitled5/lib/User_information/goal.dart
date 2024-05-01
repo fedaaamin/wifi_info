@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 import 'package:untitled5/buttons/next_button.dart';
 
 import 'activity.dart';
@@ -11,14 +10,13 @@ class Goals extends StatefulWidget {
   @override
   State<Goals> createState() => _GoalsState();
 }
- String? userPurpose;
+
+String? userPurpose;
+
 class _GoalsState extends State<Goals> {
   int index = 0;
-List purpose=[
-  "Muscle Dehydration",
-  "Body Building",
-  "weight stability"
-];
+  List purpose = ["Muscle Dehydration", "Body Building", "weight stability"];
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -64,13 +62,12 @@ List purpose=[
                       onSelectedItemChanged: (int i) async {
                         setState(() {
                           index = i;
-                          userPurpose=purpose[index];
+                          userPurpose = purpose[index];
                         });
-
                       },
                       children: <Widget>[
                         Text(
-                      "Muscle Dehydration",
+                          "Muscle Dehydration",
                           style: TextStyle(
                               color: index == 0 ? Colors.white : Colors.grey,
                               fontSize: 30),
@@ -81,12 +78,10 @@ List purpose=[
                               color: index == 1 ? Colors.white : Colors.grey,
                               fontSize: 30),
                         ),
-                        Text(
-                            "weight stability",
+                        Text("weight stability",
                             style: TextStyle(
                                 color: index == 2 ? Colors.white : Colors.grey,
                                 fontSize: 30)),
-
                       ]),
                 )
               ],

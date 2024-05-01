@@ -89,8 +89,7 @@ class _GoalsState extends State<Levels> {
                       Text('high',
                           style: TextStyle(
                               color: index == 2 ? Colors.white : Colors.grey,
-                              fontSize: 30)
-                      ),
+                              fontSize: 30)),
                     ]),
               )
             ],

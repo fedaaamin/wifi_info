@@ -16,7 +16,6 @@ class Weight extends StatefulWidget {
 class _WeightState extends State<Weight> {
   double selectedWeight = 50.0;
 
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -71,7 +70,7 @@ class _WeightState extends State<Weight> {
                         onSelectedItemChanged: (index) async {
                           setState(() {
                             selectedWeight = 30.0 + index.toDouble();
-                            userWeight=selectedWeight.toInt();
+                            userWeight = selectedWeight.toInt();
                           });
                         },
                         scrollController: FixedExtentScrollController(

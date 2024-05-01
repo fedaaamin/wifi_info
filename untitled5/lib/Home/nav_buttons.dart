@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:untitled5/Home/Activity/steps.dart';
+import 'package:untitled5/Home/Profile/profile.dart';
 import 'package:untitled5/Home/home_page.dart';
-import 'package:untitled5/Home/user_food/food_card.dart';
 import 'package:untitled5/notifications/notifications.dart';
 
 class NavButtons extends StatefulWidget {
@@ -22,38 +22,38 @@ class _NavButtonsState extends State<NavButtons> {
         backgroundColor: Colors.black,
         tabs: [
           PersistentTabConfig(
-            screen: HomePage(),
+            screen: const HomePage(),
             item: ItemConfig(
-              icon: Icon(Icons.home_filled),
+              icon: const Icon(Icons.home_filled),
               activeForegroundColor: Colors.white,
             ),
           ),
           PersistentTabConfig(
-            screen: Steps(),
+            screen: const Steps(),
             item: ItemConfig(
-              icon: Icon(Iconsax.activity),
+              icon: const Icon(Iconsax.activity),
               activeForegroundColor: Colors.white,
             ),
           ),
           PersistentTabConfig(
-            screen: NotificationsHome(),
+            screen: const Notifications(),
             item: ItemConfig(
-              icon: Icon(Iconsax.notification),
+              icon: const Icon(Iconsax.notification),
               activeForegroundColor: Colors.white,
             ),
           ),
           PersistentTabConfig(
-            screen: FoodCard(),
+            screen: const Profile(),
             item: ItemConfig(
-              icon: Icon(Iconsax.profile_circle5),
+              icon: const Icon(Iconsax.profile_circle5),
               activeForegroundColor: Colors.white,
             ),
           ),
         ],
         navBarBuilder: (navBarConfig) => Style10BottomNavBar(
           navBarConfig: navBarConfig,
-          navBarDecoration: NavBarDecoration(
-            color: Color(0xff505050),
+          navBarDecoration: const NavBarDecoration(
+            color: Color(0xff1C1C1E),
           ),
         ),
       ),

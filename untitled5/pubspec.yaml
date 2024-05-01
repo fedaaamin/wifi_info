@@ -57,6 +57,8 @@ dependencies:
   syncfusion_flutter_gauges: ^25.1.42
   flutter_xlider: ^3.5.0
   sleek_circular_slider: ^2.0.1
+  flutter_lints: ^3.0.2
+  flutter_slider_drawer: ^2.1.3
 
 
 

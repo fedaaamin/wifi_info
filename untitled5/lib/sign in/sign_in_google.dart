@@ -40,7 +40,6 @@ class _SignInGoogleState extends State<SignInGoogle> {
         idToken: googleAuth.idToken,
       );
 
-
       // Once signed in, return the UserCredential
       await FirebaseAuth.instance.signInWithCredential(credential);
       print("=================================");
@@ -65,16 +64,11 @@ class _SignInGoogleState extends State<SignInGoogle> {
             MaterialPageRoute(builder: (context) => const NavButtons()),
           );
         } else if (rs.data == 0) {
-
-
-          await  dioHelper.postDate(url: url,
-
-                data: {
-                  "traineeId": userId,
-                  "name": userName,
-                  "gmail": userEmail,
-                }
-            );
+          await dioHelper.postDate(url: url, data: {
+            "traineeId": userId,
+            "name": userName,
+            "gmail": userEmail,
+          });
 
           Navigator.push(
             context,
@@ -96,7 +90,6 @@ class _SignInGoogleState extends State<SignInGoogle> {
         userId = id.data;
         print(userId);
       });
-
 
       print("=================================");
       print(userEmail);
