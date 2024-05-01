@@ -115,7 +115,7 @@ class _UiSportsState extends State<UiSports> {
                                 color: Colors.white,
                               ),
                               Spacer(),
-                              Text("30 min",
+                              Text("10 min",
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold
@@ -189,7 +189,7 @@ class _UiSportsState extends State<UiSports> {
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.bold,
-                                            fontSize: 15),
+                                            fontSize: 14),
                                       ),
                                       Text(
                                         exercise.duration,

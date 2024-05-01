@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:pedometer/pedometer.dart';
+
 String formatDate(DateTime d) {
   return d.toString().substring(0, 19);
 }
+
 class Steps extends StatefulWidget {
-  const Steps({super.key});
+  const Steps({Key? key}) : super(key: key);
 
   @override
   State<Steps> createState() => _StepsState();
@@ -13,7 +16,9 @@ class Steps extends StatefulWidget {
 class _StepsState extends State<Steps> {
   late Stream<StepCount> _stepCountStream;
   late Stream<PedestrianStatus> _pedestrianStatusStream;
-  String _status = '?', _steps = '?';
+
+  int _steps = 0;
+
   @override
   void initState() {
     super.initState();
@@ -23,39 +28,24 @@ class _StepsState extends State<Steps> {
   void onStepCount(StepCount event) {
     print(event);
     setState(() {
-      _steps = event.steps.toString();
+      _steps = event.steps;
     });
   }
 
   void onPedestrianStatusChanged(PedestrianStatus event) {
     print(event);
-    setState(() {
-      _status = event.status;
-    });
-  }
-
-  void onPedestrianStatusError(error) {
-    print("=====================================");
-    print('onPedestrianStatusError: $error');
-    setState(() {
-      _status = 'Pedestrian Status not available';
-    });
-    print(_status);
   }
 
   void onStepCountError(error) {
-    print("=====================================");
     print('onStepCountError: $error');
     setState(() {
-      _steps = 'Step Count not available';
+      _steps = 0;
     });
   }
 
   void initPlatformState() {
     _pedestrianStatusStream = Pedometer.pedestrianStatusStream;
-    _pedestrianStatusStream
-        .listen(onPedestrianStatusChanged)
-        .onError(onPedestrianStatusError);
+    _pedestrianStatusStream.listen(onPedestrianStatusChanged);
 
     _stepCountStream = Pedometer.stepCountStream;
     _stepCountStream.listen(onStepCount).onError(onStepCountError);
@@ -66,50 +56,115 @@ class _StepsState extends State<Steps> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pedometer Example'),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Steps Taken',
-              style: TextStyle(fontSize: 30),
-            ),
-            Text(
-              _steps,
-              style: TextStyle(fontSize: 60),
-            ),
-            Divider(
-              height: 100,
-              thickness: 0,
-              color: Colors.white,
-            ),
-            Text(
-              'Pedestrian Status',
-              style: TextStyle(fontSize: 30),
-            ),
-            Icon(
-              _status == 'walking'
-                  ? Icons.directions_walk
-                  : _status == 'stopped'
-                  ? Icons.accessibility_new
-                  : Icons.error,
-              size: 100,
-            ),
-            Center(
-              child: Text(
-                _status,
-                style: _status == 'walking' || _status == 'stopped'
-                    ? TextStyle(fontSize: 30)
-                    : TextStyle(fontSize: 20, color: Colors.red),
-              ),
-            )
-          ],
-        ),
-      ),
+      backgroundColor: Colors.black,
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children:[
+          SleekCircularSlider(
+            innerWidget: (_) {
+              return Center(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "",
+                      style: TextStyle(
+                          color: Colors.white,
 
+                          fontSize: 30
+                      ),
+                    ),
+                    Text(
+                      _steps.toString(),
+                      style: TextStyle(
+                          fontSize: 30,
+                          color: Colors.white
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+            appearance: CircularSliderAppearance(
+              size: 200,
+              startAngle: 180,
+              angleRange: 360,
+              customWidths: CustomSliderWidths(
+                progressBarWidth: 5,
+                trackWidth: 5,
+                handlerSize: 15,
+              ),
+              customColors: CustomSliderColors(
+                progressBarColors: [
+                  Color(0xff790023),
+                  Colors.white,
+                ],
+                trackColor: Colors.grey,
+                dotColor: Colors.transparent,
+              ),
+            ),
+            min: 0,
+            max: 10000,
+            initialValue: _steps.toDouble(),
+            onChange: (double value) {},
+          ),
+          Row(
+            children: [
+              SleekCircularSlider(
+                innerWidget: (_) {
+                  return Center(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                            "Steps",
+                          style: TextStyle(
+                            color: Colors.white,
+
+                            fontSize: 30
+                          ),
+                        ),
+                        Text(
+                          _steps.toString(),
+                          style: TextStyle(
+                              fontSize: 30,
+                            color: Colors.white
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                },
+                appearance: CircularSliderAppearance(
+                  size: 200,
+                  startAngle: 180,
+                  angleRange: 360,
+                  customWidths: CustomSliderWidths(
+                    progressBarWidth: 5,
+                    trackWidth: 5,
+                    handlerSize: 15,
+                  ),
+                  customColors: CustomSliderColors(
+                    progressBarColors: [
+                      Color(0xff790023),
+                      Colors.white,
+                    ],
+                    trackColor: Colors.grey,
+                    dotColor: Colors.transparent,
+                  ),
+                ),
+                min: 0,
+                max: 10000,
+                initialValue: _steps.toDouble(),
+                onChange: (double value) {},
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

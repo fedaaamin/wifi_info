@@ -72,13 +72,28 @@ class _FoodCardState extends State<FoodCard> {
               height: 43,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Color(0xff505050),
+                color: Color(0xff2C2C2E),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 16, bottom: 8),
+                    padding: const EdgeInsets.only(
+                      left: 7,
+                      top: 7
+                    ),
+                    child: Icon(
+                        Icons.restaurant_menu_outlined,
+                      color: Color(0xff790023),
+                      size: 30,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 16,
+                        bottom: 8,
+
+                    ),
                     child: Text(
                       category,
                       style: TextStyle(
@@ -106,7 +121,7 @@ class _FoodCardState extends State<FoodCard> {
               height: 400,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: Color(0xff505050),
+                color: Color(0xff2C2C2E),
               ),
               child: ListView.builder(
                 shrinkWrap: true,
@@ -131,7 +146,7 @@ class _FoodCardState extends State<FoodCard> {
         height: 60,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(15),
-          color: Color(0xff790023),
+          color: Color(0xff464646),
         ),
         child: Row(
           children: [
