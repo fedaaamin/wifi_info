@@ -106,14 +106,15 @@ class _NotificationsState extends State<Notifications> {
             if (firstTextSelected)
               const Column(
                 children: [
-                  NewNotifications(title: "Drink Water",
-                      body: "Don't forget to drink water!", time: '7:00 pm'),
-                  SizedBox(height: 20,),
+
                   NewNotifications(title: "Time for sleep",
-                      body: "You should be sleep now!", time: '10:00 pm',),
+                      body: "You should be sleep now!", time: 'Now',),
                   SizedBox(height: 20,),
                   NewNotifications(title: "Time for Activity",
                       body: "Let's go to complete the Workout", time: '4:00 pm',),
+                  NewNotifications(title: "Drink Water",
+                      body: "Don't forget to drink water!", time: '7:00 pm'),
+                  SizedBox(height: 20,),
 
 
                 ],
@@ -126,7 +127,7 @@ class _NotificationsState extends State<Notifications> {
 
 
                     NewNotifications(title: "Time for sleep",
-                        body: "You should be sleep now!", time: '10:00 pm',),
+                        body: "You should be sleep now!", time: 'Now',),
                     SizedBox(height: 20,),
                     NewNotifications(title: "Drink Water",
                         body: "Don't forget to drink water!", time: '7:00 pm',),
