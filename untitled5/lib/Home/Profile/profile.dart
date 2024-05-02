@@ -5,6 +5,7 @@ import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:untitled5/Home/Profile/last_activity.dart';
 import 'package:untitled5/Home/Profile/personal_info.dart';
 import 'package:untitled5/Home/Profile/setting.dart';
+import 'package:untitled5/Home/home_page.dart';
 import 'package:untitled5/User_information/food/food.dart';
 import 'package:untitled5/sign%20in/sign_in_google.dart';
 
@@ -51,7 +52,7 @@ class _ProfileState extends State<Profile> {
               child: Center(
                 child: IconButton(
                   onPressed: (){
-
+                         Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomePage()));
                   },
                   icon: const Icon(
                       Icons.arrow_back_ios_new_sharp,
@@ -133,7 +134,7 @@ class _ProfileState extends State<Profile> {
                 height: 15,
               ),
               const Setting(title: "Sleep time Modification", page: Days()),
-              SizedBox(
+              const SizedBox(
                 height:41 ,
               ),
               TextButton(
