@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:untitled5/Home/Profile/personal_widget.dart';
-import 'package:untitled5/User_information/goal.dart';
-import 'package:untitled5/User_information/height.dart';
-import 'package:untitled5/User_information/weight.dart';
+
 import 'package:untitled5/sign%20in/sign_in_google.dart';
 
 class PersonInfo extends StatefulWidget {
