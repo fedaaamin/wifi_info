@@ -6,27 +6,39 @@ class landing2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      backgroundColor: Colors.black,
+
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Image(
-            image: AssetImage("images/img_3.png"),
+            image: AssetImage("images/img_8.png"),
           ),
           SizedBox(
-            height: 66,
+            height: 35,
           ),
-          Text(
-            "CREATE A WORKOUT PLAN",
-            style: TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+          Padding(
+            padding: EdgeInsets.only(
+              left: 20,
+              right: 20,
+
+            ),
+            child: Text(
+              "Get Burn",
+              style: TextStyle(
+                 fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                textBaseline: TextBaseline.alphabetic
+              ),
+            ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          Text(
-            "TO STAY FIT",
-            style: TextStyle(
-                color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              "Let’s keep burning, to achive yours goals, it hurts only temporarily, if you give up now you will be in pain forever",
+              style: TextStyle(
+                  fontSize: 17, ),
+            ),
           ),
           SizedBox(
             height: 20,

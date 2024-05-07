@@ -13,8 +13,10 @@ class Day extends StatefulWidget {
 }
 
 class _DayState extends State<Day> {
-  Color buttonColor1 = Color(0xff3B3B3B);
-  Color buttonColor2 = Color(0xFF790023);
+  Color buttonColor1 =
+  const Color(0xff92A3FD);
+  Color buttonColor2 =
+  const Color(0xffA9A9A9);
 
   _swapColors() {
     setState(() {
@@ -27,7 +29,7 @@ class _DayState extends State<Day> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        style: ElevatedButton.styleFrom(backgroundColor: buttonColor1),
+        style: ElevatedButton.styleFrom(backgroundColor: buttonColor2),
         onPressed: () {
           _swapColors();
           setState(() {

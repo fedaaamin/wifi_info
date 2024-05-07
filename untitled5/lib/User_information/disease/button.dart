@@ -10,8 +10,12 @@ class DiseaseButton extends StatefulWidget {
 }
 
 class _DiseaseButtonState extends State<DiseaseButton> {
-  Color buttonColor1 = Color(0xff3B3B3B);
-  Color buttonColor2 = Color(0xFF790023);
+ Color buttonColor1 =
+     const Color(0xff97BEFC);
+  Color buttonColor2 =
+  const Color(0xffA9A9A9);
+
+
 
   _swapColors() {
     setState(() {
@@ -26,8 +30,10 @@ class _DiseaseButtonState extends State<DiseaseButton> {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           minimumSize: Size(88, 36),
-          backgroundColor: buttonColor1,
-          textStyle: const TextStyle(fontSize: 20),
+                  backgroundColor: buttonColor2,
+          textStyle: const TextStyle(
+              fontSize: 20,
+          color: Colors.white),
           padding:
               const EdgeInsets.only(left: 40, right: 40, top: 18, bottom: 18),
         ),

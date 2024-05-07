@@ -17,9 +17,9 @@ class Days extends StatefulWidget {
 class _DaysState extends State<Days> {
   TimeOfDay selectedTime = TimeOfDay.now();
   int index = 0;
-  Color buttonColor1 = Color(0xff3B3B3B);
+  Color buttonColor1 = const Color(0xffA9A9A9);
 
-  Color buttonColor2 = Color(0xff3B3B3B);
+  Color buttonColor2 = const Color(0xffA9A9A9);
   String url =
       "http://11172647:60-dayfreetrial@fitnessproject-001-site1.ctempurl.com/Api/Trainees";
 
@@ -33,7 +33,7 @@ class _DaysState extends State<Days> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
@@ -43,9 +43,9 @@ class _DaysState extends State<Days> {
           const Text(
             "ENTER THE TIME AVAILABLE TO",
             style: TextStyle(
-              color: Colors.white,
+
               fontWeight: FontWeight.bold,
-              fontSize: 20,
+              fontSize: 21,
             ),
           ),
           const SizedBox(
@@ -54,14 +54,14 @@ class _DaysState extends State<Days> {
           const Text(
             "PREFORM THE EXERCISE",
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
+             fontWeight: FontWeight.bold, fontSize: 21),
           ),
           const SizedBox(
             height: 5,
           ),
           const Text(
             "YOU CAN CHOOSE THE MINIMUM OF 3 DAYS AND MAXIMUM 6 DAYS",
-            style: TextStyle(color: Colors.white, fontSize: 9),
+            style: TextStyle( fontSize: 10),
           ),
           const SizedBox(
             height: 30,
@@ -73,14 +73,14 @@ class _DaysState extends State<Days> {
                 Icon(
                   Icons.calendar_today_outlined,
                   size: 50,
-                  color: Colors.white,
+
                 ),
                 Text(
                   "DAYS",
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                      ),
                 )
               ],
             ),
@@ -94,14 +94,14 @@ class _DaysState extends State<Days> {
                 Icon(
                   Icons.access_time_filled_outlined,
                   size: 50,
-                  color: Colors.white,
+
                 ),
                 Text(
                   "TIME",
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                     ),
                 )
               ],
             ),
@@ -112,11 +112,14 @@ class _DaysState extends State<Days> {
             ),
             child: const Text(
               'Time available for exercise',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white
+              ),
+
             ),
             onPressed: () {
               setState(() {
-                buttonColor2 = Color(0xFF790023);
+                buttonColor2 = const Color(0xFF92A3FD);
               });
               showDialog(
                 context: context,
@@ -137,11 +140,14 @@ class _DaysState extends State<Days> {
                 padding: const EdgeInsets.only(left: 80, right: 80)),
             child: const Text(
               'Sleep Time',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(
+                color: Colors.white
+              ),
+
             ),
             onPressed: () {
               setState(() {
-                buttonColor1 = Color(0xFF790023);
+                buttonColor1 = const Color(0xFF92A3FD);
               });
               showDialog(
                 context: context,
@@ -157,28 +163,44 @@ class _DaysState extends State<Days> {
       ),
       floatingActionButton: Padding(
           padding: const EdgeInsets.only(bottom: 2),
-          child: FloatingActionButton.extended(
-            elevation: 4,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50.0)),
-            onPressed: () async {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => NavButtons()),
-              );
-              PostUserInfo();
-              print(userId);
-              print("==========================");
-              print(availableDays);
-              print(userAge);
-            },
-            backgroundColor: Colors.white,
-            label: const Text(
-              "Next   >",
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xFF790023)),
+          child: Container(
+               decoration: BoxDecoration(
+                     borderRadius: BorderRadius.circular(50),
+                 gradient: const LinearGradient(
+
+                  begin: Alignment.topRight,
+               end: Alignment.bottomLeft,
+                 colors: [
+             Color(0xff92A3FD),
+             Color(0xff9DCEFF)
+
+               ]
+                ),
+               ),
+            child: FloatingActionButton.extended(
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50.0)),
+              onPressed: () async {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const NavButtons()),
+                );
+                PostUserInfo();
+                print(userId);
+                print("==========================");
+                print(availableDays);
+                print(userAge);
+              },
+
+              label: const Text(
+                "Next   >",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
             ),
           )),
     );

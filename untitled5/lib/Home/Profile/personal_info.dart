@@ -17,13 +17,13 @@ class _PersonInfoState extends State<PersonInfo> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xff1C1C1E),
+
         appBar: AppBar(
-          backgroundColor:  const Color(0xff1C1C1E),
+
           title: const Text(
             "PERSONAl INFORMATION",
             style: TextStyle(
-                color: Colors.white,
+
                 fontSize: 20,
                 fontWeight: FontWeight.bold
 
@@ -36,7 +36,14 @@ class _PersonInfoState extends State<PersonInfo> {
               height: 32,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color:  Colors.black12
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      const Color(0xff92A3FD),
+
+                      Color(0xff9DCEFF),
+                    ]),
               ),
               child: Center(
                 child: IconButton(
@@ -47,6 +54,7 @@ class _PersonInfoState extends State<PersonInfo> {
                     Icons.arrow_back_ios_new_sharp,
                     size: 20,
                     color: Colors.white,
+
                   ),
                 ),
               ),
@@ -67,7 +75,7 @@ class _PersonInfoState extends State<PersonInfo> {
                     return const Center(
                       child:Icon(
                         Icons.person,
-                        color: Colors.white,
+                        color: Colors.grey,
                         size: 80,
                       ),
           
@@ -84,8 +92,11 @@ class _PersonInfoState extends State<PersonInfo> {
                     ),
                     customColors: CustomSliderColors(
                       progressBarColors: [
-                        const Color(0xff790023),
-                        Colors.white,
+
+                        const Color(0xff92A3FD),
+                        const Color(0xffFA9E97),
+                        Color(0xff9DCEFF),
+
                       ],
                       trackColor: const Color(0xff2C2C2E),
                       dotColor: Colors.transparent,

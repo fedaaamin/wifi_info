@@ -17,9 +17,22 @@ class NewNotifications extends StatelessWidget {
         children: [
           Row(
             children: [
-              const Icon(
-                Icons.circle,
-                color: Color(0xff790023),
+              Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          const Color(0xff92A3FD),
+
+                          Color(0xff9DCEFF),
+                        ]),
+                  borderRadius: BorderRadius.circular(50)
+                ),
+                child: const Icon(
+                  Icons.circle,
+                  color: Colors.transparent,
+                ),
               ),
               const SizedBox(
                 width: 5,
@@ -27,7 +40,7 @@ class NewNotifications extends StatelessWidget {
               Text(
               title,
                 style: const TextStyle(
-                    color: Colors.white,
+
                     fontSize: 25
                 ),
               ),
@@ -36,7 +49,7 @@ class NewNotifications extends StatelessWidget {
               Text(
                   time,
                 style: const TextStyle(
-                    color: Colors.white,
+
                     fontSize: 10
                 ),
               )
@@ -45,7 +58,7 @@ class NewNotifications extends StatelessWidget {
           Text(
             body,
       style: const TextStyle(
-      color: Colors.white,
+
       fontSize: 15
       ),
           ),
@@ -53,7 +66,7 @@ class NewNotifications extends StatelessWidget {
           Container(
             width: double.infinity,
             height: .25,
-            color: Colors.white,
+            color: Colors.grey,
           )
 
         ],

@@ -19,9 +19,9 @@ class _FoodState extends State<Food> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+
       appBar: AppBar(
-        backgroundColor: Colors.black,
+
         actions: [
           TextButton(
             onPressed: () {
@@ -30,48 +30,48 @@ class _FoodState extends State<Food> {
                 MaterialPageRoute(builder: (context) => const Disease()),
               );
             },
-            child: Text(
+            child: const Text(
               "SKIP >",
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white),
+                  color: Colors.black),
             ),
           )
         ],
       ),
-      body: Center(
+      body: const Center(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const Text(
+              Text(
                 "DO YOU HAVE AN ALLERGY",
                 style: TextStyle(
-                    color: Colors.white,
+
                     fontWeight: FontWeight.bold,
-                    fontSize: 20),
+                    fontSize: 25),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 3,
               ),
-              const Text(
+              Text(
                 "TO ANY FOOD?, CHOOSE IT",
                 style: TextStyle(
-                    color: Colors.white,
+
                     fontWeight: FontWeight.bold,
-                    fontSize: 20),
+                    fontSize: 25),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10,
               ),
-              const Text(
+              Text(
                 "THIS HELPS US KEEP YOU HEALTHY",
                 style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
-                    fontSize: 10),
+                    fontSize: 13),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 30,
               ),
               // end the c
@@ -80,93 +80,93 @@ class _FoodState extends State<Food> {
                   children: [
                     Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
                         FoodButtons(text: "Legumes"),
-                        const SizedBox(
+                        SizedBox(
                           width: 60,
                         ),
                         FoodButtons(text: "Egg"),
                       ],
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     FoodButtons(text: "Fish"),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
                         FoodButtons(text: "Dairy"),
-                        const SizedBox(
+                        SizedBox(
                           width: 60,
                         ),
                         FoodButtons(text: "Spices"),
                       ],
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     FoodButtons(text: "Sugars"),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
                         FoodButtons(text: "Meat"),
-                        const SizedBox(
+                        SizedBox(
                           width: 60,
                         ),
                         FoodButtons(text: "Nuts"),
                       ],
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     FoodButtons(text: "Chicken"),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
                         FoodButtons(text: "Rice"),
-                        const SizedBox(
+                        SizedBox(
                           width: 60,
                         ),
                         FoodButtons(text: "Macaroni"),
                       ],
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     FoodButtons(text: "Spices"),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     Row(
                       children: [
-                        const SizedBox(
+                        SizedBox(
                           width: 10,
                         ),
                         FoodButtons(text: "Chocolate"),
-                        const SizedBox(
+                        SizedBox(
                           width: 40,
                         ),
                         FoodButtons(text: "Peanut"),
                       ],
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 30,
                     ),
                     FoodButtons(text: "Almonds"),
@@ -177,8 +177,8 @@ class _FoodState extends State<Food> {
           ),
         ),
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(
+      floatingActionButton: const Padding(
+        padding: EdgeInsets.only(
           right: 10,
           bottom: 30,
         ),

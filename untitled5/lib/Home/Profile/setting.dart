@@ -26,14 +26,14 @@ class _SettingState extends State<Setting> {
             children: [
               Text(widget.title,
                 style: const TextStyle(
-                  color: Colors.white,
+
                   fontSize: 15
                 ),
               ),
               const Spacer(),
               const Icon(
                   Icons.arrow_forward_ios_outlined,
-              color: Colors.white,
+
                 size: 20,
               )
             ],
@@ -42,7 +42,7 @@ class _SettingState extends State<Setting> {
           Container(
             width: double.infinity,
             height: .25,
-            color: Colors.white,
+           color: Colors.grey,
           )
         ],
       ),

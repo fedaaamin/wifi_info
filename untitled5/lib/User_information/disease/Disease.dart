@@ -15,9 +15,9 @@ class _DiseaseState extends State<Disease> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+
       appBar: AppBar(
-        backgroundColor: Colors.black,
+
         actions: [
           TextButton(
             onPressed: () {
@@ -26,79 +26,81 @@ class _DiseaseState extends State<Disease> {
                 MaterialPageRoute(builder: (context) => const Age()),
               );
             },
-            child: Text(
+
+            child: const Text(
               "SKIP >",
               style: TextStyle(
+                color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white),
+                  ),
             ),
           )
         ],
       ),
-      body: Center(
+      body: const Center(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
-              const Text(
+              Text(
                 "DO YOU SUFFER FROM",
                 style: TextStyle(
-                    color: Colors.white,
+
                     fontWeight: FontWeight.bold,
-                    fontSize: 20),
+                    fontSize: 25),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 3,
               ),
-              const Text(
+              Text(
                 "ANY DISEASE?, CHOOSE IT",
                 style: TextStyle(
-                    color: Colors.white,
+
                     fontWeight: FontWeight.bold,
-                    fontSize: 20),
+                    fontSize: 25),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 10,
               ),
-              const Text(
+              Text(
                 "THIS HELPS US KEEP YOU HEALTHY",
                 style: TextStyle(
-                    color: Colors.white,
+
                     fontWeight: FontWeight.bold,
-                    fontSize: 10),
+                    fontSize: 12),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 35,
               ),
               DiseaseButton(text: "Diabetes"),
-              const SizedBox(
+              SizedBox(
                 height: 35,
               ),
               DiseaseButton(text: "Pressure "),
-              const SizedBox(
+              SizedBox(
                 height: 35,
               ),
               DiseaseButton(text: "Insulin resistance"),
-              const SizedBox(
+              SizedBox(
                 height: 35,
               ),
               DiseaseButton(text: "High cholesterol"),
-              const SizedBox(
+              SizedBox(
                 height: 35,
               ),
               DiseaseButton(text: "Pregnancy"),
-              const SizedBox(
+              SizedBox(
                 height: 35,
               ),
               DiseaseButton(text: "High thyroid hormone"),
-              const SizedBox(
+              SizedBox(
                 height: 35,
               ),
               DiseaseButton(text: "Kidney disease"),
-              const SizedBox(
+              SizedBox(
                 height: 35,
               ),
               DiseaseButton(text: "Mediterranean fever"),
@@ -106,8 +108,8 @@ class _DiseaseState extends State<Disease> {
           ),
         ),
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(right: 10, bottom: 30),
+      floatingActionButton: const Padding(
+        padding: EdgeInsets.only(right: 10, bottom: 30),
         child: NextButton(page: Food()),
       ),
     );

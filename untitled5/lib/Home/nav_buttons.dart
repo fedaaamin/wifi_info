@@ -17,43 +17,44 @@ class _NavButtonsState extends State<NavButtons> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black12,
+
       body: PersistentTabView(
-        backgroundColor: Colors.black,
+
         tabs: [
           PersistentTabConfig(
+
             screen: const HomePage(),
             item: ItemConfig(
               icon: const Icon(Icons.home_filled),
-              activeForegroundColor: Colors.white,
+              activeForegroundColor: const Color(0xffC58BF2),
             ),
           ),
           PersistentTabConfig(
             screen: const Steps(),
             item: ItemConfig(
               icon: const Icon(Iconsax.activity),
-              activeForegroundColor: Colors.white,
+              activeForegroundColor: const Color(0xffC58BF2),
             ),
           ),
           PersistentTabConfig(
             screen: const Notifications(),
             item: ItemConfig(
               icon: const Icon(Iconsax.notification),
-              activeForegroundColor: Colors.white,
+              activeForegroundColor: const Color(0xffC58BF2),
             ),
           ),
           PersistentTabConfig(
             screen: const Profile(),
             item: ItemConfig(
               icon: const Icon(Iconsax.profile_circle5),
-              activeForegroundColor: Colors.white,
+              activeForegroundColor: const Color(0xffC58BF2),
             ),
           ),
         ],
         navBarBuilder: (navBarConfig) => Style10BottomNavBar(
           navBarConfig: navBarConfig,
           navBarDecoration: const NavBarDecoration(
-            color: Color(0xff1C1C1E),
+
           ),
         ),
       ),

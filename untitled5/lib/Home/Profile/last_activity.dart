@@ -17,13 +17,13 @@ class _LastActivityState extends State<LastActivity> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff1C1C1E),
+
       appBar: AppBar(
-        backgroundColor: const Color(0xff1C1C1E),
+
         title: const Text(
           "PERSONAl INFORMATION",
           style: TextStyle(
-              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
+              fontSize: 20, fontWeight: FontWeight.bold),
         ),
         leading: Padding(
           padding: const EdgeInsets.all(10),
@@ -31,7 +31,15 @@ class _LastActivityState extends State<LastActivity> {
             width: 32,
             height: 32,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30), color: Colors.black12),
+                borderRadius: BorderRadius.circular(30),
+              gradient: const LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color(0xff92A3FD),
+
+                    Color(0xff9DCEFF),
+                  ]),),
             child: Center(
               child: IconButton(
                 onPressed: () {
@@ -56,9 +64,20 @@ class _LastActivityState extends State<LastActivity> {
             child: Container(
               padding: const EdgeInsetsDirectional.all(10),
 
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  color: const Color(0xff464646)),
+
+                decoration: BoxDecoration(
+                    color:  Color(0xff97BEFC),
+
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 1,
+                        blurRadius: 7,
+                        offset: Offset(4,8),
+                      )
+                    ],
+                    borderRadius: BorderRadius.circular(20)
+                ),
               child: TableCalendar(
                 calendarFormat: _calendarFormat,
                 focusedDay: _focusedDay,
@@ -75,11 +94,11 @@ class _LastActivityState extends State<LastActivity> {
                 },
                 calendarStyle: const CalendarStyle(
                   todayDecoration: BoxDecoration(
-                    color: Colors.red,
+                    color: Color(0xff97BEFC),
                     shape: BoxShape.circle,
                   ),
                   markerDecoration: BoxDecoration(
-                    color: Colors.red,
+
                     shape: BoxShape.circle,
                   ),
                   outsideDaysVisible: false,
@@ -108,7 +127,16 @@ class _LastActivityState extends State<LastActivity> {
               height: 43,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: const Color(0xff2C2C2E),
+                  color:  Color(0xff97BEFC),
+
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 7,
+                      offset: Offset(4,8),
+                    )
+                  ]
               ),
               child: const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -117,7 +145,8 @@ class _LastActivityState extends State<LastActivity> {
                     padding: EdgeInsets.only(left: 7, top: 7),
                     child: Icon(
                       Icons.restaurant_menu_outlined,
-                      color: Color(0xff790023),
+                      color: Colors.white,
+
                       size: 30,
                     ),
                   ),
@@ -155,7 +184,16 @@ class _LastActivityState extends State<LastActivity> {
               height: 43,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
-                color: const Color(0xff2C2C2E),
+                  color:  Color(0xff97BEFC),
+
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 1,
+                      blurRadius: 7,
+                      offset: Offset(4,8),
+                    )
+                  ]
               ),
               child: const Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -164,7 +202,7 @@ class _LastActivityState extends State<LastActivity> {
                     padding: EdgeInsets.only(left: 7, top: 7),
                     child: Icon(
                       Icons.sports_gymnastics,
-                      color: Color(0xff790023),
+                      color: Colors.white,
                       size: 30,
                     ),
                   ),

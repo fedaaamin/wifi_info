@@ -27,17 +27,21 @@ class _VideoAppState extends State<VideoApp> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xff505050),
+
         body: Center(
           child: _controller.value.isInitialized
               ? AspectRatio(
                   aspectRatio: _controller.value.aspectRatio,
                   child: VideoPlayer(_controller),
                 )
-              : CircularProgressIndicator(),
+              : CircularProgressIndicator(
+            color: Color(
+              0xffFA9E97
+            ),
+          ),
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Color(0xff790023),
+          backgroundColor: Color(0xff97BEFC),
           onPressed: () {
             setState(() {
               if (_controller.value.isPlaying) {

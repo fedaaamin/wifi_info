@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.black,
+
         body: Padding(
           padding: const EdgeInsets.only(left: 20),
           child: SingleChildScrollView(
@@ -31,23 +31,23 @@ class _HomePageState extends State<HomePage> {
                     top: 60,
                   ),
                   child: Text(
-                    "HELLO ${userName}.",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 25,
+                    "HELLO $userName.",
+                    style: const TextStyle(
+
+                        fontSize: 27,
                         fontWeight: FontWeight.bold),
                   ),
                 ),
-                SizedBox(
-                  height: 63,
+                const SizedBox(
+                  height: 45,
                 ),
                 Row(
                   children: [
-                    Text(
+                    const Text(
                       "Today workout",
                       style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15,
+
+                        fontSize: 16,
                       ),
                     ),
                     Padding(
@@ -57,16 +57,16 @@ class _HomePageState extends State<HomePage> {
                       child: Text(
                         // _selectedDate.toString(),
                         result.toString(),
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
+                        style: const TextStyle(
+
+                          fontSize: 16,
                         ),
                       ),
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: 10,
+                const SizedBox(
+                  height: 2,
                 ),
                 Stack(
                   alignment: AlignmentDirectional.bottomStart,
@@ -81,20 +81,26 @@ class _HomePageState extends State<HomePage> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => UiSports()));
+                                    builder: (context) => const UiSports()));
                           },
-                          child: Image.asset(
-                            "images/img_5.png",
+                          child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Color(0xff97BEFC).withOpacity(.50)
+                            ),
+                            child: Image.asset(
+                              "images/img_4.png",
+                            ),
                           ),
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 25, left: 20),
+                    const Padding(
+                      padding: EdgeInsets.only(bottom: 25, left: 20),
                       child: Text(
                         "Day1 - WarpUp",
                         style: TextStyle(
-                            color: Colors.white,
+                        color: Colors.white,
                             fontSize: 15,
                             fontWeight: FontWeight.bold),
                       ),
@@ -103,16 +109,16 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.only(left: 30, bottom: 5),
                       child: Text(
                           DateFormat('jm').format(DateTime.now()).toString(),
-                          style: TextStyle(
-                              color: Color(0xff790023),
+                          style: const TextStyle(
+                              color: Color(0xff92A3FD),
                               fontWeight: FontWeight.bold)),
                     )
                   ],
                 ),
-                Text(
+                const Text(
                   "Today Eating Plan",
                   style: TextStyle(
-                      color: Colors.white,
+
                       fontWeight: FontWeight.bold,
                       fontSize: 20),
                 ),

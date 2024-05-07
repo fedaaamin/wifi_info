@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:untitled5/api/api_post.dart';
 import 'package:untitled5/notifications/notifications.dart';
 import 'package:untitled5/notifications/notifications_firebase.dart';
-
 import 'logo.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -51,10 +50,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(),
       debugShowCheckedModeBanner: false,
-      home: Logo(),
       navigatorKey: navigatorKey,
+      home: const Logo(),
       routes: {
-        "/notificationsHome": (context) => Notifications(
+        "/notificationsHome": (context) => const Notifications(
             // Title: title, body: body,
             )
       },

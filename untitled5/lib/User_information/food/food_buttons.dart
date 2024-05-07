@@ -10,8 +10,12 @@ class FoodButtons extends StatefulWidget {
 }
 
 class _FoodButtonsState extends State<FoodButtons> {
-  Color buttonColor1 = Color(0xff3B3B3B);
-  Color buttonColor2 = Color(0xFF790023);
+
+  Color buttonColor2 =
+  const Color(0xffA9A9A9);
+
+  Color buttonColor1 =
+  const Color(0xff97BEFC);
 
   _swapColors() {
     setState(() {
@@ -26,7 +30,7 @@ class _FoodButtonsState extends State<FoodButtons> {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           minimumSize: Size(135, 20),
-          backgroundColor: buttonColor1,
+          backgroundColor: buttonColor2,
           textStyle: const TextStyle(fontSize: 20),
           padding:
               const EdgeInsets.only(left: 30, right: 30, top: 15, bottom: 15),

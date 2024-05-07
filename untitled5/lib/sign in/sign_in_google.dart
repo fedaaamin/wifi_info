@@ -61,7 +61,7 @@ class _SignInGoogleState extends State<SignInGoogle> {
         if (rs.data == 1) {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const NavButtons()),
+            MaterialPageRoute(builder: (context) => const Gender()),
           );
         } else if (rs.data == 0) {
           await dioHelper.postDate(url: url, data: {

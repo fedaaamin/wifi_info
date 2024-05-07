@@ -19,7 +19,7 @@ class UserWidget extends StatelessWidget {
           child: Text(
              title,
           style: const TextStyle(
-            color: Color(0xff790023),
+            color: Color(0xff97BEFC),
             fontSize: 20,
           ),
           ),
@@ -32,7 +32,7 @@ class UserWidget extends StatelessWidget {
           child: Text(
             info,
             style: const TextStyle(
-              color: Colors.white,
+
               fontSize: 20,
             ),
           ),
@@ -41,7 +41,7 @@ class UserWidget extends StatelessWidget {
         Container(
           width: double.infinity,
           height: .25,
-          color: Colors.white,
+          color: Colors.grey,
         )
 
       ],
