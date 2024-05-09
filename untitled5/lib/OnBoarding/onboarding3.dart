@@ -44,9 +44,13 @@ class landing3 extends StatelessWidget {
 
                   gradient: const LinearGradient(
 
-                       begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [Color(0xff92A3FD), Color(0xff9DCEFF)]
+                        begin: Alignment.topRight,
+                       end: Alignment.centerLeft,
+                      colors: [
+                        Color(0xff92A3FD),
+                        Color(0xff9DCEFF),
+
+                      ]
                   ),
                 borderRadius: BorderRadius.circular(30)
               ),

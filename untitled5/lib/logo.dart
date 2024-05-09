@@ -25,10 +25,14 @@ class _LogoState extends State<Logo> {
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topRight ,
+         end: Alignment.centerRight,
+           begin: Alignment.topRight ,
             colors: [
+
              Color(0xff92A3FD),
-             Color(0xff9DCEFF)
+             Color(0xff9DCEFF),
+
+
             ]
         )
       ),

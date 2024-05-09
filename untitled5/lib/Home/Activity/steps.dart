@@ -187,7 +187,7 @@ class _StepsState extends State<Steps> {
                     ),
                   ),
                   min: 0,
-                  max: 9000,
+                  max: 100000,
                   initialValue: _steps.toDouble(),
                   onChange: (double value) {},
                 ),

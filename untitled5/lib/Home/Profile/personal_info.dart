@@ -98,7 +98,7 @@ class _PersonInfoState extends State<PersonInfo> {
                         Color(0xff9DCEFF),
 
                       ],
-                      trackColor: const Color(0xff2C2C2E),
+                      trackColor: const Color(0xffDDDADA),
                       dotColor: Colors.transparent,
                     ),
                   ),
