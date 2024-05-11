@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">fitness_test</string>
-    <string name="facebook_app_id">1538607610019793</string>
-    <string name="fb_login_protocol_scheme">fb06906d22831017edaf27bae20432b86c</string>
-    <string name="facebook_client_token">bdf64bcf93c36c74d7fa5acbf6788d4b</string>
-</resources>
